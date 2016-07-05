@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>cn.qpwa.mgt.common</groupId>
 			<artifactId>mgt-common-config</artifactId>
-			<version>${env}-${mgt-common-config.version}</version>
+			<version>${mgt-common-config.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>cn.qpwa.mgt.common</groupId>
