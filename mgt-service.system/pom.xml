@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cn.qpwa.mgt.common</groupId>
+		<artifactId>mgt-common-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pay-common-parent</relativePath>
+	</parent>
+
+	<groupId>cn.qpwa.mgt.service</groupId>
+	<artifactId>mgt-service.system</artifactId>
+	<version>${pay-service-account.version}</version>
+	<packaging>jar</packaging>
+	
+	<name>mgt-service.system</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<log4j.leve>debug</log4j.leve>
+		<log4j.ale>debug</log4j.ale>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>cn.qpwa.mgt.common</groupId>
+			<artifactId>mgt-common</artifactId>
+			<version>${mgt-common.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.qpwa.mgt.common</groupId>
+			<artifactId>mgt-common-config</artifactId>
+			<version>${env}-${mgt-common-config.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.qpwa.mgt.common</groupId>
+			<artifactId>mgt-common-core</artifactId>
+			<version>${mgt-common-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.qpwa.mgt.facade</groupId>
+			<artifactId>mgt-facade-system</artifactId>
+			<version>${mgt-facade-system.version}</version>
+		</dependency>
+	</dependencies>
+</project>
