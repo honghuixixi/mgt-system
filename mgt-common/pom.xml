@@ -12,7 +12,7 @@
 	<version>${mgt-common.version}</version>
 	<packaging>jar</packaging>
 
-	<name>mgt-ommon</name>
+	<name>mgt-common</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>mgt-common-config</artifactId>
-	<version>${env}-${mgt-common-config.version}</version>
+	<version>${mgt-common-config.version}</version>
 	<packaging>jar</packaging>
 
 	<name>mgt-common-config</name>
