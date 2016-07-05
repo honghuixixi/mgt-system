@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.constant;
+package cn.qpwa.common.constant;
 
 public class LogConstant {
 	/**

@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.page;
+package cn.qpwa.common.page;
 
 public class PageIndex {
 	private long startindex;

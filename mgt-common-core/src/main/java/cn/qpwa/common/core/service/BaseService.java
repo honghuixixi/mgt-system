@@ -1,6 +1,6 @@
-package cn.qpwa.mgt.common.core.service;
+package cn.qpwa.common.core.service;
 
-import cn.qpwa.mgt.common.utils.LogEnabled;
+import cn.qpwa.common.utils.LogEnabled;
 
 public interface BaseService<T> extends LogEnabled {
 

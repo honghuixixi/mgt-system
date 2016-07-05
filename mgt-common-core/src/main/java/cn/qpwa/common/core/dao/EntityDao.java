@@ -1,11 +1,11 @@
-package cn.qpwa.mgt.common.core.dao;
+package cn.qpwa.common.core.dao;
 
 import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.LockMode;
 
-import cn.qpwa.mgt.common.page.PageView;
+import cn.qpwa.common.page.PageView;
 
 @SuppressWarnings({"rawtypes","hiding"})
 public interface EntityDao<T> {

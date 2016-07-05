@@ -2,17 +2,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>cn.qpwa.mgt.common</groupId>
-		<artifactId>mgt-common-parent</artifactId>
+		<groupId>cn.qpwa.common</groupId>
+		<artifactId>qpwa-common-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../mgt-common-parent</relativePath>
+		<relativePath>../qpwa-common-parent</relativePath>
 	</parent>
 
-	<artifactId>mgt-common-config</artifactId>
-	<version>${env}-${mgt-common-config.version}</version>
+	<artifactId>qpwa-common-config</artifactId>
+	<version>${qpwa-common-config.version}</version>
 	<packaging>jar</packaging>
 
-	<name>mgt-common-config</name>
+	<name>qpwa-common-config</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

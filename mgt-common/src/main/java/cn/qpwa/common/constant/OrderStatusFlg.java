@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.constant;
+package cn.qpwa.common.constant;
 
 /**
  * OrderMas订单实体，订单状态允许设置的值范围

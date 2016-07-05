@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.core.dao;
+package cn.qpwa.common.core.dao;
 
 public class ConditionModel {
 

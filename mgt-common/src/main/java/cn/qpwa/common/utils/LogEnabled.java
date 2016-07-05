@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.utils;
+package cn.qpwa.common.utils;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.utils;
+package cn.qpwa.common.utils;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

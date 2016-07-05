@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.qpwa.mgt.common</groupId>
-	<artifactId>mgt-common-parent</artifactId>
+	<groupId>cn.qpwa.common</groupId>
+	<artifactId>qpwa-common-parent</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>mgt-common-parent</name>
+	<name>qpwa-common-parent</name>
 	<url>http://maven.apache.org</url>
 
 	<distributionManagement>
@@ -40,10 +40,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- common projects -->
-		<mgt-common.version>1.0-SNAPSHOT</mgt-common.version>
-		<mgt-common-config.version>1.0-SNAPSHOT</mgt-common-config.version>
-		<mgt-common-core.version>1.0-SNAPSHOT</mgt-common-core.version>
-		<mgt-common-web.version>1.0-SNAPSHOT</mgt-common-web.version>
+		<qpwa-common.version>1.0-SNAPSHOT</qpwa-common.version>
+		<qpwa-common-config.version>1.0-SNAPSHOT</qpwa-common-config.version>
+		<qpwa-common-core.version>1.0-SNAPSHOT</qpwa-common-core.version>
+		<qpwa-common-web.version>1.0-SNAPSHOT</qpwa-common-web.version>
 
 		<!-- facade projects -->
 		<mgt-facade-system.version>1.0-SNAPSHOT</mgt-facade-system.version>

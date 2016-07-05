@@ -1,7 +1,6 @@
-package cn.qpwa.mgt.common.core.dao;
+package cn.qpwa.common.core.dao;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -24,10 +23,10 @@ import org.hibernate.impl.SessionFactoryImpl;
 import org.hibernate.transform.Transformers;
 import org.springframework.orm.hibernate3.HibernateCallback;
 
-import cn.qpwa.mgt.common.page.Page;
-import cn.qpwa.mgt.common.page.PageView;
-import cn.qpwa.mgt.common.utils.GenericsUtils;
-import cn.qpwa.mgt.common.utils.SystemContext;
+import cn.qpwa.common.page.Page;
+import cn.qpwa.common.page.PageView;
+import cn.qpwa.common.utils.GenericsUtils;
+import cn.qpwa.common.utils.SystemContext;
 
 /**
  * 负责为单个Entity对象提供CRUD操作的Hibernate DAO基类.

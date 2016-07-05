@@ -2,18 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>cn.qpwa.mgt.common</groupId>
-		<artifactId>mgt-common-parent</artifactId>
+		<groupId>cn.qpwa.common</groupId>
+		<artifactId>qpwa-common-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../mgt-common-parent</relativePath>
+		<relativePath>../qpwa-common-parent</relativePath>
 	</parent>
 
 	<groupId>cn.qpwa.mgt.service</groupId>
-	<artifactId>mgt-service.system</artifactId>
-	<version>${pay-service-account.version}</version>
+	<artifactId>mgt-service-system</artifactId>
+	<version>${mgt-service-system.version}</version>
 	<packaging>jar</packaging>
 	
-	<name>mgt-service.system</name>
+	<name>mgt-service-system</name>
 	<url>http://maven.apache.org</url>
 	
 	<properties>
@@ -24,19 +24,19 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>cn.qpwa.mgt.common</groupId>
-			<artifactId>mgt-common</artifactId>
-			<version>${mgt-common.version}</version>
+			<groupId>cn.qpwa.common</groupId>
+			<artifactId>qpwa-common</artifactId>
+			<version>${qpwa-common.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>cn.qpwa.mgt.common</groupId>
-			<artifactId>mgt-common-config</artifactId>
-			<version>${env}-${mgt-common-config.version}</version>
+			<groupId>cn.qpwa.common</groupId>
+			<artifactId>qpwa-common-config</artifactId>
+			<version>${qpwa-common-config.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>cn.qpwa.mgt.common</groupId>
-			<artifactId>mgt-common-core</artifactId>
-			<version>${mgt-common-core.version}</version>
+			<groupId>cn.qpwa.common</groupId>
+			<artifactId>qpwa-common-core</artifactId>
+			<version>${qpwa-common-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>cn.qpwa.mgt.facade</groupId>

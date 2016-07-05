@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.utils;
+package cn.qpwa.common.utils;
 
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class SystemContext {

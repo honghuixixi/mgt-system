@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>cn.qpwa.mgt.common</groupId>
-		<artifactId>mgt-common-parent</artifactId>
+		<groupId>cn.qpwa.common</groupId>
+		<artifactId>qpwa-common-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../mgt-common-parent</relativePath>
+		<relativePath>../qpwa-common-parent</relativePath>
 	</parent>
 	
 	<groupId>cn.qpwa.mgt.web</groupId>
@@ -27,25 +27,25 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>cn.qpwa.mgt.common</groupId>
-			<artifactId>mgt-common</artifactId>
-			<version>${mgt-common.version}</version>
+			<groupId>cn.qpwa.common</groupId>
+			<artifactId>qpwa-common</artifactId>
+			<version>${qpwa-common.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>cn.qpwa.mgt.common</groupId>
-			<artifactId>mgt-common-config</artifactId>
-			<version>${env}-${mgt-common-config.version}</version>
+			<groupId>cn.qpwa.common</groupId>
+			<artifactId>qpwa-common-config</artifactId>
+			<version>${qpwa-common-config.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>cn.qpwa.mgt.common</groupId>
-			<artifactId>mgt-common-core</artifactId>
-			<version>${mgt-common-core.version}</version>
+			<groupId>cn.qpwa.common</groupId>
+			<artifactId>qpwa-common-core</artifactId>
+			<version>${qpwa-common-core.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>cn.qpwa.mgt.common</groupId>
-			<artifactId>mgt-common-web</artifactId>
-			<version>${mgt-common-web.version}</version>
+			<groupId>cn.qpwa.common</groupId>
+			<artifactId>qpwa-common-web</artifactId>
+			<version>${qpwa-common-web.version}</version>
 		</dependency>
 
 		<dependency>

@@ -1,4 +1,4 @@
-package cn.qpwa.mgt.common.core.dao;
+package cn.qpwa.common.core.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
-import cn.qpwa.mgt.common.page.Page;
+import cn.qpwa.common.page.Page;
 
 public enum HibernateCriteriaEnum {
 
