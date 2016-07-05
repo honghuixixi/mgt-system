@@ -59,6 +59,8 @@
 		<org.springframework.version>3.2.8.RELEASE</org.springframework.version>
 		<hibernate-core.version>3.6.10.Final</hibernate-core.version>
 		<freemarker.version>2.3.19</freemarker.version>
+		<jexcelapi.version>2.6</jexcelapi.version>
+        <zxing.core.version>3.1.0</zxing.core.version>
 
 	</properties>
 
@@ -254,6 +256,19 @@
 				<artifactId>jackson-databind</artifactId>
 				<version>2.1.4</version>
 			</dependency>
+
+			<dependency>
+				<groupId>jexcelapi</groupId>
+				<artifactId>jxl</artifactId>
+				<version>${jexcelapi.version}</version>
+			</dependency>
+
+            <!-- 绘制二维码 -->
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${zxing.core.version}</version>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 </project>
