@@ -36,4 +36,5 @@ public class GlobalConstant {
 	public static final String APP_SHOP = "appshop";
 	
 	
+	
 }
