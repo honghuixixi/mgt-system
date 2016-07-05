@@ -12,6 +12,7 @@
 	<packaging>jar</packaging>
   
   	<name>mgt-common-core</name>
+
   	<url>http://maven.apache.org</url>
   	
   	<properties>
