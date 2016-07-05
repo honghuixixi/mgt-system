@@ -60,7 +60,7 @@
 		<hibernate-core.version>3.6.10.Final</hibernate-core.version>
 		<freemarker.version>2.3.19</freemarker.version>
 		<jexcelapi.version>2.6</jexcelapi.version>
-        <zxing.core.version>3.1.0</zxing.core.version>
+		<zxing.core.version>3.1.0</zxing.core.version>
 
 	</properties>
 
@@ -146,10 +146,10 @@
 				<groupId>postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 				<version>9.1-901.jdbc4</version>
-			</dependency> 
+			</dependency>
 			<dependency>
 				<groupId>org.aspectj</groupId>
-				<artifactId>aspectjrt</artifactId> 
+				<artifactId>aspectjrt</artifactId>
 				<version>1.7.4</version>
 			</dependency>
 			<dependency>
@@ -263,12 +263,19 @@
 				<version>${jexcelapi.version}</version>
 			</dependency>
 
-            <!-- 绘制二维码 -->
-            <dependency>
-                <groupId>com.google.zxing</groupId>
-                <artifactId>core</artifactId>
-                <version>${zxing.core.version}</version>
-            </dependency>
+			<!-- 绘制二维码 -->
+			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>core</artifactId>
+				<version>${zxing.core.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>1.0.1.Final</version>
+			</dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 </project>
