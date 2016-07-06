@@ -71,6 +71,7 @@
 		<commons-httpclient.version>3.1</commons-httpclient.version>
 		<commons-io.version>2.2</commons-io.version>
 		<commons-codec.version>1.6</commons-codec.version>
+		<commons-fileupload.version>1.2.2</commons-fileupload.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-net.version>3.1</commons-net.version>
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
@@ -79,7 +80,7 @@
 		<org.aspectj.version>1.7.4</org.aspectj.version>
 		<org.eclipse.jetty.version>9.0.0.RC0</org.eclipse.jetty.version>
 		<org.bouncycastle.version>1.47</org.bouncycastle.version>
-		<org.codehaus.jackson.version>1.9.0</org.codehaus.jackson.version>
+		<org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
 		<com.google.code.gson.version>2.2.4</com.google.code.gson.version>
 		<com.oracle.ojdbc14.version>11.2private</com.oracle.ojdbc14.version>
 		<ehcache-core.version>2.5.7</ehcache-core.version>
@@ -96,6 +97,8 @@
         <im4j.version>1.4.0</im4j.version>
         <lowagie.version>2.1.7</lowagie.version>
         <octo.captcha.version>1.0-RC6</octo.captcha.version>
+		<druid.version>1.0.7</druid.version>
+		<javax.validation.version>1.1.0.Final</javax.validation.version>
 	</properties>
 
 	<dependencyManagement>
@@ -319,6 +322,14 @@
 				<artifactId>jxl</artifactId>
 				<version>${jexcelapi.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>net.sf.json-lib</groupId>
+				<artifactId>json-lib</artifactId>
+				<version>2.4</version>
+				<classifier>jdk15</classifier>
+			</dependency>
+
 			<!-- 绘制二维码 -->
 			<dependency>
 				<groupId>com.google.zxing</groupId>
@@ -330,7 +341,21 @@
 				<artifactId>hibernate-jpa-2.0-api</artifactId>
 				<version>${hibernate-jpa.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
+			<dependency>  
+			    <groupId>javax.validation</groupId>  
+			    <artifactId>validation-api</artifactId>  
+			    <version>${javax.validation.version}</version>  
+			</dependency> 
             <dependency>
                 <groupId>javax.ws.rs</groupId>
                 <artifactId>javax.ws.rs-api</artifactId>
@@ -351,7 +376,6 @@
                 <artifactId>jersey-client</artifactId>
                 <version>${glassfish.jersey.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.unionpay.acp</groupId>
                 <artifactId>upacp_sdk_private</artifactId>
@@ -437,7 +461,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
         </dependencies>
 	</dependencyManagement>
 </project>
