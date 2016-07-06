@@ -58,10 +58,33 @@
 		<junit.vserion>4.11</junit.vserion>
 		<org.springframework.version>3.2.8.RELEASE</org.springframework.version>
 		<hibernate-core.version>3.6.10.Final</hibernate-core.version>
+		<hibernate-jpa.version>1.0.1.Final</hibernate-jpa.version>
+		<hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
 		<freemarker.version>2.3.19</freemarker.version>
 		<jexcelapi.version>2.6</jexcelapi.version>
-        <zxing.core.version>3.1.0</zxing.core.version>
-
+		<zxing.core.version>3.1.0</zxing.core.version>
+		<log4j.version>1.2.17</log4j.version>
+		<javassist.version>3.12.1.GA</javassist.version>
+		<commons-logging.version>1.0</commons-logging.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-beanutils.version>1.8.0</commons-beanutils.version>
+		<commons-httpclient.version>3.1</commons-httpclient.version>
+		<commons-io.version>2.2</commons-io.version>
+		<commons-codec.version>1.6</commons-codec.version>
+		<c3p0.version>0.9.1.2</c3p0.version>
+		<postgresql.version>9.1-901.jdbc4</postgresql.version>
+		<org.aspectj.version>1.7.4</org.aspectj.version>
+		<org.eclipse.jetty.version>9.0.0.RC0</org.eclipse.jetty.version>
+		<org.bouncycastle.version>1.47</org.bouncycastle.version>
+		<org.codehaus.jackson.version>1.9.0</org.codehaus.jackson.version>
+		<com.google.code.gson.version>2.2.4</com.google.code.gson.version>
+		<com.oracle.ojdbc14.version>11.2private</com.oracle.ojdbc14.version>
+		<ehcache-core.version>2.5.7</ehcache-core.version>
+		<ehcache-web.version>2.0.4</ehcache-web.version>
+		<json-lib.version>2.4</json-lib.version>
+		<json-lib-ext-spring.version>1.0.2</json-lib-ext-spring.version>
+		<p6spy.version>2.0.2</p6spy.version>
+		<com.fasterxml.jackson.version>2.1.4</com.fasterxml.jackson.version>
 	</properties>
 
 	<dependencyManagement>
@@ -80,32 +103,32 @@
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
-				<version>1.2.17</version>
+				<version>${log4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>javassist</groupId>
 				<artifactId>javassist</artifactId>
-				<version>3.12.1.GA</version>
+				<version>${javassist.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-logging</groupId>
 				<artifactId>commons-logging</artifactId>
-				<version>1.0</version>
+				<version>${commons-logging.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-lang</groupId>
 				<artifactId>commons-lang</artifactId>
-				<version>2.6</version>
+				<version>${commons-lang.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-beanutils</groupId>
 				<artifactId>commons-beanutils</artifactId>
-				<version>1.8.0</version>
+				<version>${commons-beanutils.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>c3p0</groupId>
 				<artifactId>c3p0</artifactId>
-				<version>0.9.1.2</version>
+				<version>${c3p0.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -145,42 +168,37 @@
 			<dependency>
 				<groupId>postgresql</groupId>
 				<artifactId>postgresql</artifactId>
-				<version>9.1-901.jdbc4</version>
-			</dependency> 
+				<version>${postgresql.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.aspectj</groupId>
-				<artifactId>aspectjrt</artifactId> 
-				<version>1.7.4</version>
+				<artifactId>aspectjrt</artifactId>
+				<version>${org.aspectj.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.aspectj</groupId>
 				<artifactId>aspectjweaver</artifactId>
-				<version>1.7.4</version>
+				<version>${org.aspectj.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.code.gson</groupId>
 				<artifactId>gson</artifactId>
-				<version>2.2.4</version>
+				<version>${com.google.code.gson.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.codehaus.jackson</groupId>
 				<artifactId>jackson-core-asl</artifactId>
-				<version>1.9.0</version>
+				<version>${org.codehaus.jackson.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.codehaus.jackson</groupId>
 				<artifactId>jackson-mapper-lgpl</artifactId>
-				<version>1.9.0</version>
-			</dependency>
-			<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>5.1.30</version>
+				<version>${org.codehaus.jackson.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.oracle</groupId>
 				<artifactId>ojdbc14</artifactId>
-				<version>11.2private</version>
+				<version>${com.oracle.ojdbc14.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.freemarker</groupId>
@@ -190,39 +208,39 @@
 			<dependency>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-servlet</artifactId>
-				<version>9.0.0.RC0</version>
+				<version>${org.eclipse.jetty.version}</version>
 				<scope>private</scope>
 			</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
 				<artifactId>commons-codec</artifactId>
-				<version>1.6</version>
+				<version>${commons-codec.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.bouncycastle</groupId>
 				<artifactId>bcprov-jdk15on</artifactId>
-				<version>1.47</version>
+				<version>${org.bouncycastle.version}</version>
 				<optional>true</optional>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
-				<version>4.2.0.Final</version>
+				<version>${hibernate-validator.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
-				<version>2.2</version>
+				<version>${commons-io.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>net.sf.ehcache</groupId>
 				<artifactId>ehcache-core</artifactId>
-				<version>2.5.7</version>
+				<version>${ehcache-core.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>net.sf.ehcache</groupId>
 				<artifactId>ehcache-web</artifactId>
-				<version>2.0.4</version>
+				<version>${ehcache-web.version}</version>
 			</dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
@@ -242,54 +260,51 @@
 			<dependency>
 				<groupId>commons-httpclient</groupId>
 				<artifactId>commons-httpclient</artifactId>
-				<version>3.1</version>
+				<version>${commons-httpclient.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>net.sf.json-lib</groupId>
 				<artifactId>json-lib</artifactId>
-				<version>2.4</version>
+				<version>${json-lib.version}</version>
 				<classifier>jdk15</classifier>
 			</dependency>
 			<dependency>
 				<groupId>net.sf.json-lib</groupId>
 				<artifactId>json-lib-ext-spring</artifactId>
-				<version>1.0.2</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                </exclusions>
+				<version>${json-lib-ext-spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>p6spy</groupId>
 				<artifactId>p6spy</artifactId>
-				<version>2.0.2</version>
+				<version>${p6spy.version}</version>
 			</dependency>
-
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-core</artifactId>
-				<version>2.1.4</version>
+				<version>${com.fasterxml.jackson.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
-				<version>2.1.4</version>
+				<version>${com.fasterxml.jackson.version}</version>
 			</dependency>
-
 			<dependency>
 				<groupId>jexcelapi</groupId>
 				<artifactId>jxl</artifactId>
 				<version>${jexcelapi.version}</version>
 			</dependency>
-
-            <!-- 绘制二维码 -->
-            <dependency>
-                <groupId>com.google.zxing</groupId>
-                <artifactId>core</artifactId>
-                <version>${zxing.core.version}</version>
-            </dependency>
+			<!-- 绘制二维码 -->
+			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>core</artifactId>
+				<version>${zxing.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>${hibernate-jpa.version}</version>
+			</dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 </project>
