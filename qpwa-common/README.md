@@ -17,6 +17,8 @@
 ```
 /date
     日期工具
+/file
+    文件工具
 /hibernate
     session工具
 /http

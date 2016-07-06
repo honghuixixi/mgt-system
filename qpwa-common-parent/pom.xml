@@ -334,12 +334,12 @@
             <dependency>
                 <groupId>org.glassfish.jersey.media</groupId>
                 <artifactId>jersey-media-multipart</artifactId>
-                <version>${glassfish.jersey.version2.22.2}</version>
+                <version>${glassfish.jersey.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.core</groupId>
                 <artifactId>jersey-client</artifactId>
-                <version>${glassfish.jersey.version2.22.2}</version>
+                <version>${glassfish.jersey.version}</version>
             </dependency>
 
             <dependency>
