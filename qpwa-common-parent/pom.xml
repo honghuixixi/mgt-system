@@ -73,6 +73,7 @@
 		<commons-codec.version>1.6</commons-codec.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-net.version>3.1</commons-net.version>
+        <commons-fileupload.version>1.2.2</commons-fileupload.version>
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<postgresql.version>9.1-901.jdbc4</postgresql.version>
 		<org.aspectj.version>1.7.4</org.aspectj.version>
@@ -91,6 +92,10 @@
 		<javax.ws.rs.version>2.0.1</javax.ws.rs.version>
 		<glassfish.jersey.version>2.22.2</glassfish.jersey.version>
 		<unionpay.version>1.0.0private</unionpay.version>
+        <jsoup.version>1.7.2</jsoup.version>
+        <im4j.version>1.4.0</im4j.version>
+        <lowagie.version>2.1.7</lowagie.version>
+        <octo.captcha.version>1.0-RC6</octo.captcha.version>
 	</properties>
 
 	<dependencyManagement>
@@ -141,6 +146,11 @@
 				<artifactId>commons-beanutils</artifactId>
 				<version>${commons-beanutils.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>c3p0</groupId>
 				<artifactId>c3p0</artifactId>
@@ -346,6 +356,86 @@
                 <groupId>com.unionpay.acp</groupId>
                 <artifactId>upacp_sdk_private</artifactId>
                 <version>${unionpay.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+
+            <!-- 图片处理 -->
+            <dependency>
+                <groupId>org.im4java</groupId>
+                <artifactId>im4java</artifactId>
+                <version>${im4j.version}</version>
+            </dependency>
+
+            <!-- 字体 -->
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>${lowagie.version}</version>
+                <optional>true</optional>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>bcprov-jdk14</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext-rtf</artifactId>
+                <version>${lowagie.version}</version>
+                <optional>true</optional>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>bcprov-jdk14</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- 验证码生成 -->
+            <dependency>
+                <groupId>com.octo.captcha</groupId>
+                <artifactId>jcaptcha-all</artifactId>
+                <version>${octo.captcha.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>quartz</groupId>
+                        <artifactId>quartz</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-dbcp</groupId>
+                        <artifactId>commons-dbcp</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-pool</groupId>
+                        <artifactId>commons-pool</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>hsqldb</groupId>
+                        <artifactId>hsqldb</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>net.sf.ehcache</groupId>
+                        <artifactId>ehcache</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>concurrent</groupId>
+                        <artifactId>concurrent</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>xerces</groupId>
+                        <artifactId>xmlParserAPIs</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
         </dependencies>
