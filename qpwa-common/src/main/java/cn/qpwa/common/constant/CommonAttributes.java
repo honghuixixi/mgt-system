@@ -1,4 +1,4 @@
-package cn.qpwa.common;
+package cn.qpwa.common.constant;
 
 import java.math.BigDecimal;
 

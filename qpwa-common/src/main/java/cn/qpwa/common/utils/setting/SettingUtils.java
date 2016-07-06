@@ -1,6 +1,6 @@
 package cn.qpwa.common.utils.setting;
 
-import cn.qpwa.common.CommonAttributes;
+import cn.qpwa.common.constant.CommonAttributes;
 import cn.qpwa.common.utils.EnumConverter;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Ehcache;

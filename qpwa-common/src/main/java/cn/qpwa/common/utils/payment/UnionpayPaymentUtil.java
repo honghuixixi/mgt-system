@@ -1,6 +1,6 @@
 package cn.qpwa.common.utils.payment;
 
-import cn.qpwa.common.utils.DateUtil;
+import cn.qpwa.common.utils.date.DateUtil;
 import cn.qpwa.common.utils.setting.Setting;
 import cn.qpwa.common.utils.setting.SettingUtils;
 import com.unionpay.acp.sdk.HttpClient;

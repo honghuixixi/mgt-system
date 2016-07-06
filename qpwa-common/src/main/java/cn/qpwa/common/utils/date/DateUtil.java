@@ -1,4 +1,4 @@
-package cn.qpwa.common.utils;
+package cn.qpwa.common.utils.date;
 
 import org.apache.commons.lang.StringUtils;
 

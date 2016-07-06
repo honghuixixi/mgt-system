@@ -1,5 +1,6 @@
 ### /constant
-    常量定义
+    定义常量
+    CommonAttributes 公共参数常量
 ### /easemob
     环信消息
 ### /entity
@@ -14,6 +15,8 @@
     分页
 ### /utils
 ```
+/date
+    日期工具
 /hibernate
     session工具
 /http
@@ -31,5 +34,3 @@
 其他
     EnumConverter 枚举类型转换
 ```
-### CommonAttributes
-    公共参数
