@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context 
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/tx  
+         http://www.springframework.org/schema/tx/spring-tx.xsd 
+         http://www.springframework.org/schema/aop 
+         http://www.springframework.org/schema/aop/spring-aop.xsd">
+      
+     <!-- 采用注释的方式配置bean -->
+	<context:annotation-config />
+	
+	<!-- 读入配置属性文件 -->
+	<context:property-placeholder location="classpath:db.properties,classpath:public_system.properties,classpath:mgt_system.properties" 
+		ignore-resource-not-found="true" ignore-unresolvable="true"/>
+	
+	<!-- 配置需要扫描的包 -->	
+	<context:component-scan base-package="cn.qpwa.mgt">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan> 
+         
+    <!-- druid数据源配置 -->
+	<bean name="bizDatasource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${biz.jdbc.driver.class.name}" />
+		<property name="url" value="${mgt.system.jdbc.url}" />
+		<property name="username" value="${mgt.system.jdbc.username}" />
+		<property name="password" value="${mgt.system.jbbc.password}" />
+		<!-- 初始化连接大小 -->
+		<property name="initialSize" value="3" />
+		<!-- 连接池最大使用连接数量 -->
+		<property name="maxActive" value="2000" />
+		<!-- 连接池最大空闲 -->
+		<property name="maxIdle" value="20" />
+		<!-- 连接池最小空闲 -->
+		<property name="minIdle" value="1" />
+		<!-- 获取连接最大等待时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<!-- 
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="33" />
+		-->
+		<property name="validationQuery" value="${biz.jdbc.pool.validationQuery}" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testWhileIdle" value="true" />
+
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+
+		<!-- 打开removeAbandoned功能 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 1800秒，也就是30分钟 -->
+		<property name="removeAbandonedTimeout" value="1800" />
+		<!-- 关闭abanded连接时输出错误日志 -->
+		<property name="logAbandoned" value="true" />
+
+		<!-- 开启Druid的监控统计功能-->
+		<property name="filters" value="stat" />
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="bizDatasource" />
+		<property name="packagesToScan">
+			<list>
+				<value>cn.qpwa.mgt</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${biz.hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${biz.hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+				<prop key="hibernate.connection.release_mode">on_close</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!--使用基于注解方式配置事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>
