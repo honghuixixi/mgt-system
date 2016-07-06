@@ -1,4 +1,4 @@
-package cn.qpwa.common.filter;
+package cn.qpwa.common.web.filter;
 
 import java.io.IOException;
 
