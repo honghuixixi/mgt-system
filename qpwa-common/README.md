@@ -22,7 +22,14 @@ json
     json工具
 message
     消息工具
+payment
+    银联支付工具
 qrcode
     二维码工具
+setting
+    系统设置
 其他
+    EnumConverter 枚举类型转换
 ```
+### CommonAttributes
+    公共参数

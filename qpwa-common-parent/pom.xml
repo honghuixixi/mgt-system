@@ -330,7 +330,13 @@
                 <artifactId>jersey-client</artifactId>
                 <version>2.22.2</version>
             </dependency>
-			
-		</dependencies>
+
+            <dependency>
+                <groupId>com.unionpay.acp</groupId>
+                <artifactId>upacp_sdk_private</artifactId>
+                <version>1.0.0private</version>
+            </dependency>
+
+        </dependencies>
 	</dependencyManagement>
 </project>
