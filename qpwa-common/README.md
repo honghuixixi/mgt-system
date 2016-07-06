@@ -1,0 +1,28 @@
+### constant
+    常量定义
+### easemob
+    环信消息
+### entity
+    实体
+### excel
+    excel导出工具
+### filter
+    事务会话过滤器
+    分页过滤器
+    编码转换过滤器
+### page
+    分页
+### utils
+```
+hibernate
+    session工具
+http
+    http工具
+json
+    json工具
+message
+    消息工具
+qrcode
+    二维码工具
+其他
+```
