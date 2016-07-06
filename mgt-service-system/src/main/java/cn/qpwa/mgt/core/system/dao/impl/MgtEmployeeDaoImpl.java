@@ -2,6 +2,7 @@ package cn.qpwa.mgt.core.system.dao.impl;
 
 import cn.qpwa.common.core.dao.HibernateEntityDao;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.common.utils.SqlUtil;
 import cn.qpwa.mgt.core.system.dao.MgtEmployeeDao;
 import cn.qpwa.mgt.facade.system.entity.MgtEmployee;
 import org.apache.commons.lang.StringUtils;

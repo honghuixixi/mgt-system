@@ -53,7 +53,7 @@ public class SubaccountServiceImpl implements SubaccountService {
 		Msg msg = new Msg();
 		JSONObject result = null;
 		try {
-			result = EciticUtils.eciticFactory("dlbregsnXML", params);
+			result = null;//EciticUtils.eciticFactory("dlbregsnXML", params);
 		} catch (Exception e) {
 			e.printStackTrace();
 			msg.setSuccess(false);	
