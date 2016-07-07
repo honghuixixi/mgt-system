@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:#fff;}
+*{padding:0;margin:0;text-align:left;}
+ul,li{list-style:none;}
+a{text-decoration:none;}
+.ifaNav-box{padding:10px 10px 0;}
+.ifaNav-box h2{color:#313131;font-size:16px;border-left:4px #f07402 solid;height:16px;padding-left:10px;line-height:16px;}
+.ifaNav-box h2 span{color:#2f6593;font-size:12px;font-weight:normal;cursor:pointer;padding-left:20px;}
+.line-div{border-top:1px solid #e6e6e6;font-size:0;height:0px;overflow:hidden;margin-top:10px;}
+.db-box{width:100%;overflow:hidden;margin-top:10px;}
+.db-box h3{background:#625e5f;color:#fff;height:28px;line-height:28px;text-indent:24px;font-size:14px;padding-right:10px ;}
+.db-box h3 i{width:6px;height:6px;display:inline-block;vertical-align:middle;margin-right:8px;}
+.db-box h3 .fk-icon1{background:#f00;}
+.db-box h3 .fk-icon2{background:#9aeb37;}
+.db-box h3 .fk-icon3{background:#ff7a0b;}
+.sj-box{width:100%;overflow:hidden;padding:10px 0 0;}
+.sj-box dl dd{float:left;width:22%;display:inline;margin-right:4%;}
+.sj-box dl .mar_0{margin:0;}
+.dd-findBox{border:solid 1px #d2d2d2;padding:10px;overflow:hidden;}
+.tit-num1 .sj_tit{width:100px;border-bottom:2px solid #f00;height:24px;line-height:24px;font-size:14px;color:#615f60;}
+.tit-num2 .sj_tit{width:100px;border-bottom:2px solid #9aeb37;height:24px;line-height:24px;font-size:14px;color:#615f60;}
+.tit-num3 .sj_tit{width:100px;border-bottom:2px solid #ff7a0b;height:24px;line-height:24px;font-size:14px;color:#615f60;}
+.biao_box{width:100%;text-align:center;padding-top:10px}
+.biao_box label{font-size:30px;color:#030303;}
+.biao_box span{font-size:12px;padding-left:20px;color:#5f5d5e;}
+
+.date-box{float:right;}
+.date-box a{border:1px solid #d3d3d3;background:#f3f3f3;color:#333333;border-left:none 0;display:inline-block;font-size:12px;height:22px;line-height:22px;padding:0px 10px;}
+.date-box .day_left{border-radius:3px 0 0 3px;border-left:solid 1px #d3d3d3;}
+.date-box .month_right{border-radius:0 3px 3px 0;}
+.date-box .cur{background:#ff7708;color:#fff;border:none 0;height:24px; line-height:24px;}

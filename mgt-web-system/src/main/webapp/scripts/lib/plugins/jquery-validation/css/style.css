@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+label.error {
+		  background:url("../images/onError.gif") no-repeat 0px 0px;
+		  padding-left: 16px;
+		  padding-bottom: 2px;
+		  font-weight: bold;
+		  color: #EA5200;
+		}
+input.haha { border: 1px solid red; }  
+
+label.checked {background:url("../images/onSuccess.gif") no-repeat 0px 0px;}
+
+
+input.focus { border: 2px solid green; }  
+
+
+ul li{ display: block;}  

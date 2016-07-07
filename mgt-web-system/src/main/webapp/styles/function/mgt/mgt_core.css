@@ -1,0 +1,19 @@
+body,label,input,button,select,textarea,.uneditable-input,.navbar-search .search-query{font-family:Helvetica,Georgia,Arial,sans-serif,宋体;font-family:'Open Sans';font-size:13px;_font-size:12px;}
+body{font-family:'Open Sans';font-size:13px;color:#393939;line-height:1.5;}
+.page-content .toolbar{display:block;margin-bottom:10px;border:1px solid #ccc;background-color:#f2f2f2;background-image: linear-gradient(to bottom,#fff 0,#eee 100%);}
+.toolbar-padding{padding:0 15px;}
+#toolbar,.toolbar{display:block;text-align:center;/*border-bottom:1px solid #ccc;background-color:#f2f2f2;background-image: linear-gradient(to bottom,#fff 0,#eee 100%)*/background:#fff;}
+body.toolbar-fixed-top{padding-top:50px;height: 100%;width:80%;margin-left:100px;}
+body.toolbar-fixed-top1{padding-top:50px;height: 100%;width:60%;margin-left:100px;}
+.padding-scroll{padding-bottom:10px;padding-right:20px;}
+.help-inline{color: #d16e6c;padding:0px;padding-top: 7px;margin-top: 0;margin-bottom: 0;}
+.w-date{background: #fff url(../../images/datePicker.gif) no-repeat right;}
+.x-masked{position:absolute;z-index:1030;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1030;background-color:#000;opacity:.5 !important;filter:alpha(opacity = 50) !important;}
+.x-masked-relative{position:relative;}
+.x-masked-text .fa-spinner{font-size:20px;display:inline-block;margin-right:10px;-webkit-animation:spin 2s infinite linear;color:#ff892a !important;}
+.x-masked-text{position:absolute;z-index:1035;padding:5px 10px;line-height:35px;background-color:#ffffff;border:1px solid #999999;border:1px solid rgba(0,0,0,0.2);outline:none;background-clip:padding-box;font-weight:bold;}
+#editor {overflow:scroll; max-height:100px}
+.login-message{height:110px;padding-top:50px;}
+.login-message .alert{position:relative;width:400px;margin:0 auto 20px;}
+.form-signin{position:relative;text-align:left;width:400px;padding:25px 29px 29px;margin:10px auto 0;background-color:#fff;border:1px solid #e5e5e5;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:0px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:0 1px 2px rgba(0,0,0,.05);box-shadow:0 1px 2px rgba(0,0,0,.05);}
+form.form-signin-win{border:0px;margin:0px;width:100%!important;}

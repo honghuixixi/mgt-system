@@ -1,0 +1,48 @@
+/* 框架 */
+html, body{font-family:"Microsoft YaHei" !important; font-size:12px;padding:0;margin:0;} 
+body {width:100%; height:100%; background:#f3f3f3;}
+.header-wrap {height:40px; background:#333; clear:both;}
+.menu-wrap {text-index:-99px;width:170px; background:#fff; overflow:auto;border:solid 1px #d2d2d2;margin:10px;display:inline;padding-left:20px;}
+.main-wrap {width:auto;margin-top:10px;overflow-y:auto;}
+.footer-wrap {height:35px; background:#333333;width:100%;overflow:hidden;}
+
+/* 顶部样式 */
+.header-wrap .logo {float:left;border-top:2px #ff7708 solid;height:38px;margin-left:10px;display:inline;padding-top:7px;}
+.header-wrap .logo img {width:160px; height:24px;}
+
+.header-wrap .r-info {padding-top:5px; padding-right:40px;}
+.header-wrap .r-info .button {margin-right:20px; text-decoration:none; position:relative;}
+.header-wrap .r-info a {text-decoration:none;}
+.current-meeting {margin-right: 20px;font-size: 14px;padding: 5px 8px 8px 8px;background: #5cb85c;}
+.r-info .pull-right .setUrl{padding-right:45px;}
+#setUrl img{cursor:pointer;}
+#setUrl{padding-top:9px;}
+/* 底部样式 */
+.footer-wrap .copyright {margin:0px; padding:10px 20px 0 0; color:#fff; font-size:12px;}
+.footer-wrap .url {margin:0px; padding:5px 20px 10px 0; font-size:12px;}
+
+/* 菜单样式 */
+.menu-wrap dl {margin:0px; background:#fff; width:100%;position:relative;}
+.menu-wrap dl dt .right-icon{position:absolute;left:113px;top:17px;color: #333;font: 400 13px/13px simsun;height: 13px;overflow: hidden;width: 7px;}
+.menu-wrap dl dt {font-weight:bold;border-bottom:solid 1px #f2f2f2;height:48px; line-height:48px; color:#4B4B4B; background:#fff; cursor:pointer; position:relative;}
+.menu-wrap dl dd {display:none;}
+.menu-wrap dl dd strong {padding-left: 20px;}
+.menu-wrap dl dd a {line-height:30px; text-decoration:none; padding-left:12px; display:block; color:#4B4B4B;}
+.menu-wrap dl dd:last-child {padding-bottom:8px;}
+.menu-wrap dl.active {}
+.menu-wrap dl.active dt {}
+.menu-wrap dl.active dd {display:block;}
+.menu-wrap dl.active dd.subitem a {padding-left:20px;}
+.menu-wrap dl.active dd:hover a {color:#000;}
+.menu-wrap dl.active dd a.active { background:#f2f2f2; color:#ff7602;}
+.menu-wrap dl dt i {position:absolute; top:16px; left:15px; color:#E5E5E5; font-size:14px;}
+.menu-wrap dl.active dt i {color:#333;}
+.menu-wrap .navbar-unread {top: 15px; right:5px;background: #ff0000;}
+
+/* 主页内容样式 */
+.zzsc {position:fixed;left: 50%;top:50%;margin-left:-435px;margin-top:-250px;;overflow-y:auto;overflow-x:auto;solid:1px;height:500px;width:800px;z-index:9999; display:none;background: #FFF;}
+.zzsc:after {content:"";display: inline-block;vertical-align: middle;width:100%;}
+.content{display: inline-block; *display: inline; *zoom:1;	vertical-align: middle;margin:25px 34px;width:auto; }
+.content_mark{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:555; background:#000; opacity:0.5;filter:alpha(opacity=50); display:none;}
+.zzsc_title{width:800px;position:fixed;left:50%;margin-left:-435px;top:50%;margin-top:-270px;display:none;height:20px;z-index:9999;background:#ADD8E6;}
+.btn_x{float:right;margin-right:3px;width:15px;background:;top:6px; right:6px; width:15px; height:15px;cursor:pointer;}

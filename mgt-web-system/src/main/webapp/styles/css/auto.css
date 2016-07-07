@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+* {
+	font-size: 18px;
+}
+
+
+#content {
+	width: 300px;
+	height: 30px;
+	padding: 0px auto;
+}
+
+#button {
+	width: 100px;
+	height: 30px;
+}
+
+.pro {
+	cursor: default;
+}
+
+#auto {
+	background-color: white;
+}
