@@ -10,23 +10,17 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
 	default-lazy-init="false">
 	
-	<!-- 采用注释的方式配置bean -->
-	<context:annotation-config />
-	
 	<!-- 读入配置属性文件 -->
 	<context:property-placeholder location="classpath:db.properties,classpath:public_system.properties,classpath:mgt_system.properties" 
-		ignore-resource-not-found="true" ignore-unresolvable="true"/>
+		ignore-resource-not-found="true" ignore-unresolvable="true"/> 
 	
 	<!-- 配置需要扫描的包 -->	
-	<context:component-scan base-package="cn.qpwa.mgt">
-		<context:exclude-filter type="annotation"
-			expression="org.springframework.stereotype.Controller" />
-	</context:component-scan>
+	<context:component-scan base-package="cn.qpwa"/>
 	
-	<mvc:annotation-driven validator="validator" /> 
-
+	<mvc:annotation-driven/> 
+	
 	<!-- <mvc:interceptors>
-		<mvc:interceptor>
+			<mvc:interceptor>
 			<mvc:mapping path="/manager/**" />
 			<mvc:mapping path="/department/**" />
 			<mvc:mapping path="/role/**" />
@@ -76,23 +70,24 @@
 			<mvc:mapping path="/impvendorcust/**" />
 			<mvc:mapping path="/procedure/**" />
 			<mvc:mapping path="/inOutBalanceOfAcc/**" />
-			<bean class="cn.qpwa.util.interceptor.SessionInterceptor"
+			<mvc:mapping path="/test/**" />
+			<bean class="cn.qpwa.mgt.web.system.utils.interceptor.SessionInterceptor"
 				init-method="init"></bean>
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/**/**" />
-			<bean class="cn.qpwa.handler.MultiViewHandlerInterceptor"></bean>
+			<bean class="cn.qpwa.mgt.web.system.handler.MultiViewHandlerInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors> -->
 	
-	<!-- <bean id="authorityMapping" class="cn.qpwa.framework.core.handler.AuthorityMappingRead">
+	<bean id="authorityMapping" class="cn.qpwa.common.web.handler.AuthorityMappingRead">
 		<constructor-arg index="0">
 			<list>
 				<value>classpath:authorityMapping.properties</value>
 			</list>
 		</constructor-arg>
 		<constructor-arg index="1" value="loadAuthorityMap"></constructor-arg>
-	</bean> -->
+	</bean>
 	
 	<!-- 文件上传 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
@@ -102,31 +97,31 @@
 	</bean>
 	
 	<!-- 映射地址和视图展示 -->
-	<!-- <bean id="portalUrlMapping" class="cn.qpwa.framework.core.handler.URLMappingRead">
+	<bean id="portalUrlMapping" class="cn.qpwa.common.web.handler.URLMappingRead">
 		<constructor-arg index="0">
 			<list>
 				<value>classpath:urlMapping.properties</value>
 			</list>
 		</constructor-arg>
 		<constructor-arg index="1" value="loadUrlMap"></constructor-arg>
-	</bean> -->
+	</bean>
 
 	<bean id="freemarkerStaticModelsProps"
 		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="location" value="classpath:freemarkerstatic.properties" />
 	</bean>
 	
-	<!-- <bean id="freemarkerStaticModels" class="cn.qpwa.common.utils.FreemarkerStaticModels"
+	<bean id="freemarkerStaticModels" class="cn.qpwa.common.web.utils.FreemarkerStaticModels"
 		factory-method="getInstance">
 		<property name="staticModels" ref="freemarkerStaticModelsProps" />
-	</bean> -->
+	</bean>
 
 	<!-- 配置freeMarker视图解析器 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
 		<property name="contentType" value="text/html; charset=utf-8" />
 		<property name="suffix" value="${template.suffix}" />
-		<!-- <property name="attributesMap" ref="freemarkerStaticModels" /> -->
+		<property name="attributesMap" ref="freemarkerStaticModels" />
 	</bean>
 
 	<bean id="validator"

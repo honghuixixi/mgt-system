@@ -1,6 +1,9 @@
 package cn.qpwa.common.web.vo;
 
 import java.math.BigDecimal;
+import java.util.Date;
+
+
 
 /**
  * 用户信息前台展示对象，用于web前台数据交互
@@ -9,8 +12,6 @@ public class UserVO {
 
 	/** "用户名"Cookie名称 */
 	public static final String USERNAME_COOKIE_NAME = "username";
-	/** "密码"Cookie名称 */
-	public static final String PASS_COOKIE_NAME = "password";
 	/** "用户登录状态1为已登录"Cookie名称 */
 	public static final String STATUS_COOKIE_NAME = "status";
 	/** 用户ID */
@@ -27,18 +28,12 @@ public class UserVO {
 
 	/** 用户名 */
 	private String username;
-	
-	/** 店铺名称 */
-	private String name;
-	
-	/** 密码 */
-	private String userPassword;
 
 	/** 公司名称 */
 	private String companyName;
 
 	/** 公司地区 */
-	private BigDecimal areaId;
+	private String areaId;
 
 	/** 公司地址 */
 	private String companyAddr;
@@ -64,29 +59,70 @@ public class UserVO {
 	/** 是否记录登陆用户名，1为记录；0为不记录 */
 	private String rememberUsername;
 	
-	/** 是否记录登陆密码，1为记录；0为不记录 */
-	private String rememberPassword;
+	/* 后台用户表对应字段*/
+	/** 主键ID */
+	private String id;	
 	
-	/** 是否通过审核用户，Y为通过；N为不通过*/
-	private String guestFlg;
+	/** 供应商编码 */
+	private String merchantCode;
 	
-	/**业务员id*/
-	private BigDecimal picNo;
+	/** 用户登录账号 */
+	private String accountName;
 	
-	public BigDecimal getPicNo() {
-		return picNo;
+	/** 用户真实姓名 */
+	private String userName;
+	
+	/** 用户编号 6 位 */
+	private String userCode;
+	
+	/** 邮件 */
+	private String email;
+	
+	/** 手机 */
+	private String mobile;
+	
+	/** 会员标识 */
+	private String customId;
+	
+	/** 图片URL */
+	private String picUrl;
+	
+	/** 状态0：未启用 1：已启用 2:已删除 */
+	private String status;	
+	
+	/** 性别 */
+	private String sex;	
+	
+	/** 创建者 */
+	private String createBy;
+	
+	/** 创建日期 */
+	private Date createDate = new Date();
+	
+	/** 修改人ID */
+	private String updateBy;
+	
+	/** 修改日期 */
+	private Date updateDate;
+	/**创库*/
+	private String whC;
+	/**供应商username*/
+	private String merchantUserName;
+
+	public String getMerchantUserName() {
+		return merchantUserName;
 	}
 
-	public void setPicNo(BigDecimal picNo) {
-		this.picNo = picNo;
+	public void setMerchantUserName(String merchantUserName) {
+		this.merchantUserName = merchantUserName;
 	}
 
-	public String getName() {
-		return name;
+	public String getWhC() {
+		return whC;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setWhC(String whC) {
+		this.whC = whC;
 	}
 
 	public BigDecimal getOrgNo() {
@@ -136,14 +172,6 @@ public class UserVO {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
-	public String getUserpassword() {
-		return userPassword;
-	}
-	
-	public void setUserpassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
 
 	public String getCompanyName() {
 		return companyName;
@@ -153,11 +181,11 @@ public class UserVO {
 		this.companyName = companyName;
 	}
 
-	public BigDecimal getAreaId() {
+	public String getAreaId() {
 		return areaId;
 	}
 
-	public void setAreaId(BigDecimal areaId) {
+	public void setAreaId(String areaId) {
 		this.areaId = areaId;
 	}
 
@@ -216,83 +244,140 @@ public class UserVO {
 	public void setRememberUsername(String rememberUsername) {
 		this.rememberUsername = rememberUsername;
 	}
-	
-	public String getRememberPassword() {
-		return rememberPassword;
+
+	//后台管理表对应字段
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getMerchantCode() {
+		return merchantCode;
+	}
+
+	public void setMerchantCode(String merchantCode) {
+		this.merchantCode = merchantCode;
+	}
+
+	public String getCustomId() {
+		return this.customId;
+	}
+
+	public void setCustomId(String customId) {
+		this.customId = customId;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getUserCode() {
+		return this.userCode;
+	}
+
+	public void setUserCode(String userCode) {
+		this.userCode = userCode;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
-	public void setRememberPassword(String rememberPassword) {
-		this.rememberPassword = rememberPassword;
+	public String getMobile() {
+		return this.mobile;
 	}
-	
-	public String getGuestFlg() {
-		return guestFlg;
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
-	
-	public void setGuestFlg(String guestFlg) {
-		this.guestFlg = guestFlg;
+
+	public String getPicUrl() {
+		return this.picUrl;
+	}
+
+	public void setPicUrl(String picUrl) {
+		this.picUrl = picUrl;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+
+	public String getSex() {
+		return this.sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getCreateBy() {
+		return createBy;
+	}
+
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public String getUpdateBy() {
+		return updateBy;
+	}
+
+	public void setUpdateBy(String updateBy) {
+		this.updateBy = updateBy;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
 	}
 
 	/**
-	 * 通过entity实体组装vo实体
+	 * 通过数据对象转换视图对象
 	 * 
 	 * @param entity
 	 *            数据对象
-	 * @return vo视图对象
+	 * @return视图对象
 	 */
-	public static UserVO do2vo(User entity) {
-		UserVO vo = null;
-		if (entity != null) {
-			vo = new UserVO();
-			vo.setUserNo(entity.getUserNo());
-			vo.setUsername(entity.getUserName());
-			vo.setOrgNo(entity.getOrgNo());
-			vo.setSalesMenFlg(entity.getSalesMenFlg());
-			vo.setCompanyName(entity.getName());
-			vo.setComNo(entity.getComNo());
-			vo.setLocNo(entity.getLocNo());
-			vo.setUrlAddr(entity.getUrlAddr());
-			vo.setAreaId(entity.getAreaId());
-			vo.setCompanyAddr(entity.getCrmAddress1());
-			vo.setCrmTel(entity.getCrmTel());
-			vo.setUrlAddr(entity.getUrlAddr());
-			vo.setContactName(entity.getCrmPic());
-			vo.setCrmMobile(entity.getCrmMobile());
-			vo.setGuestFlg(entity.getGuestFlg());
-			vo.setPicNo(entity.getPicNo());
-			vo.setName(entity.getName());
-
-		}
-		return vo;
-	}
-	
-	/**
-	 * 通过vo实体组装entity实体
-	 * @param vo  vo实体         
-	 * @return entity实体
-	 */
-	public static User vo2Entity(UserVO vo) {
-		User entity = null;
-		if (vo != null) {
-			entity = new User();
-			if (vo.getUserNo() != null)
-				entity.setUserNo(vo.getUserNo());
-			entity.setUserName(vo.getUsername());
-			entity.setOrgNo(vo.getOrgNo());
-			entity.setSalesMenFlg(vo.getSalesMenFlg());
-			entity.setComNo(vo.getComNo());
-			entity.setName(vo.getCompanyName());
-			entity.setLocNo(vo.getLocNo());
-			entity.setUrlAddr(vo.getUrlAddr());
-			entity.setAreaId(vo.getAreaId());
-			entity.setCrmAddress1(vo.getCompanyAddr());
-			entity.setCrmTel(vo.getCrmTel());
-			entity.setUrlAddr(vo.getUrlAddr());
-			entity.setCrmPic(vo.getContactName());
-			entity.setCrmMobile(vo.getCrmMobile());
-			entity.setGuestFlg(vo.getGuestFlg());
-			entity.setPicNo(vo.getPicNo());
-		}
-		return entity;
-	}
+//	public static UserVO do2vo(User entity) {
+//		UserVO vo = null;
+//		if (entity != null) {
+//			vo = new UserVO();
+//
+//		}
+//		return vo;
+//	}
 }

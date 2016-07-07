@@ -56,7 +56,7 @@
 
 		<!-- frameworks -->
 		<junit.vserion>4.11</junit.vserion>
-		<org.springframework.version>3.2.8.RELEASE</org.springframework.version>
+		<org.springframework.version>3.2.8.RELEASE</org.springframework.version> <!-- 4.0.0.RELEASE -->
 		<hibernate-core.version>3.6.10.Final</hibernate-core.version>
 		<hibernate-jpa.version>1.0.1.Final</hibernate-jpa.version>
 		<hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
@@ -99,6 +99,7 @@
         <octo.captcha.version>1.0-RC6</octo.captcha.version>
 		<druid.version>1.0.7</druid.version>
 		<javax.validation.version>1.1.0.Final</javax.validation.version>
+		<jaxen.version>1.1.6</jaxen.version>
 	</properties>
 
 	<dependencyManagement>
@@ -461,6 +462,11 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+        	<dependency>
+			    <groupId>jaxen</groupId>
+			    <artifactId>jaxen</artifactId>
+			    <version>${jaxen.version}</version>
+			</dependency>
         </dependencies>
 	</dependencyManagement>
 </project>

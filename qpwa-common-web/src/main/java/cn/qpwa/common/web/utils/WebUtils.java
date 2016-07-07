@@ -1,16 +1,11 @@
 package cn.qpwa.common.web.utils;
 
 import java.io.UnsupportedEncodingException;
-import java.math.BigDecimal;
-import java.net.InetAddress;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -30,14 +25,12 @@ import cn.qpwa.common.web.vo.UserVO;
 /**
  * Utils - Web
  * 
- * @author 
+ * @author
  * @version 1.0
  */
 public final class WebUtils {
 
 	public static final String SESSION_USER_PARAM = "user";
-	//session区域id
-	public static final String SESSION_AREAID_PARAM = "sessionAreaId";
 
 	/**
 	 * 不可实例化
@@ -65,8 +58,8 @@ public final class WebUtils {
 	 * @param secure
 	 *            是否启用加密
 	 */
-	public static void addCookie(HttpServletRequest request, HttpServletResponse response,
-			String name, String value, Integer maxAge, String path, String domain, Boolean secure) {
+	public static void addCookie(HttpServletRequest request, HttpServletResponse response, String name, String value,
+			Integer maxAge, String path, String domain, Boolean secure) {
 		Assert.notNull(request);
 		Assert.notNull(response);
 		Assert.hasText(name);
@@ -106,11 +99,10 @@ public final class WebUtils {
 	 * @param maxAge
 	 *            有效期(单位: 秒)
 	 */
-	public static void addCookie(HttpServletRequest request, HttpServletResponse response,
-			String name, String value, Integer maxAge) {
+	public static void addCookie(HttpServletRequest request, HttpServletResponse response, String name, String value,
+			Integer maxAge) {
 		Setting setting = SettingUtils.get();
-		addCookie(request, response, name, value, maxAge, setting.getCookiePath(),
-				setting.getCookieDomain(), null);
+		addCookie(request, response, name, value, maxAge, setting.getCookiePath(), setting.getCookieDomain(), null);
 	}
 
 	/**
@@ -125,11 +117,9 @@ public final class WebUtils {
 	 * @param value
 	 *            cookie值
 	 */
-	public static void addCookie(HttpServletRequest request, HttpServletResponse response,
-			String name, String value) {
+	public static void addCookie(HttpServletRequest request, HttpServletResponse response, String name, String value) {
 		Setting setting = SettingUtils.get();
-		addCookie(request, response, name, value, null, setting.getCookiePath(),
-				setting.getCookieDomain(), null);
+		addCookie(request, response, name, value, null, setting.getCookiePath(), setting.getCookieDomain(), null);
 	}
 
 	/**
@@ -174,8 +164,8 @@ public final class WebUtils {
 	 * @param domain
 	 *            域
 	 */
-	public static void removeCookie(HttpServletRequest request, HttpServletResponse response,
-			String name, String path, String domain) {
+	public static void removeCookie(HttpServletRequest request, HttpServletResponse response, String name, String path,
+			String domain) {
 		Assert.notNull(request);
 		Assert.notNull(response);
 		Assert.hasText(name);
@@ -205,8 +195,7 @@ public final class WebUtils {
 	 * @param name
 	 *            cookie名称
 	 */
-	public static void removeCookie(HttpServletRequest request, HttpServletResponse response,
-			String name) {
+	public static void removeCookie(HttpServletRequest request, HttpServletResponse response, String name) {
 
 		Assert.notNull(request);
 		Assert.notNull(response);
@@ -341,8 +330,7 @@ public final class WebUtils {
 	 * @return 当前的request
 	 */
 	public static final HttpServletRequest getRequest() {
-		return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
-				.getRequest();
+		return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 	}
 
 	/**
@@ -380,8 +368,7 @@ public final class WebUtils {
 	 * @return URI完整请求路径
 	 */
 	public static String getRequestURIWithParam() {
-		return getRequestURI()
-				+ (getRequest().getQueryString() == null ? "" : "?" + getRequest().getQueryString());
+		return getRequestURI() + (getRequest().getQueryString() == null ? "" : "?" + getRequest().getQueryString());
 	}
 
 	/**
@@ -411,6 +398,22 @@ public final class WebUtils {
 	}
 
 	/**
+	 * 在session中设置信息
+	 * 
+	 */
+	public static void setAttribute(String key, Object obj) {
+		getSession().setAttribute(key, obj);
+	}
+
+	/**
+	 * 通过key，在session中获取信息
+	 * 
+	 */
+	public static Object getAttribute(String key) {
+		return getSession().getAttribute(key);
+	}
+
+	/**
 	 * 判断是否为ajax操作
 	 * 
 	 * @param request
@@ -420,71 +423,5 @@ public final class WebUtils {
 	public static boolean isAjaxRequest(HttpServletRequest request) {
 		return request.getHeader("x-requested-with") != null
 				&& request.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest");
-	}
-
-	/**
-	 * 获取用户IP地址
-	 * 
-	 * @returnIP地址
-	 */
-	public static String getIpAddr() {
-		String ipAddress = null;
-		// ipAddress = this.getRequest().getRemoteAddr();
-		ipAddress = getRequest().getHeader("x-forwarded-for");
-		if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
-			ipAddress = getRequest().getHeader("Proxy-Client-IP");
-		}
-		if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
-			ipAddress = getRequest().getHeader("WL-Proxy-Client-IP");
-		}
-		if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
-			ipAddress = getRequest().getRemoteAddr();
-			if (ipAddress.equals("127.0.0.1")) {
-				// 根据网卡取本机配置的IP
-				InetAddress inet = null;
-				try {
-					inet = InetAddress.getLocalHost();
-				} catch (UnknownHostException e) {
-					e.printStackTrace();
-				}
-				ipAddress = inet.getHostAddress();
-			}
-
-		}
-
-		// 对于通过多个代理的情况，第一个IP为客户端真实IP,多个IP按照','分割
-		if (ipAddress != null && ipAddress.length() > 15) { // "***.***.***.***".length()
-			if (ipAddress.indexOf(",") > 0) {
-				ipAddress = ipAddress.substring(0, ipAddress.indexOf(","));
-			}
-		}
-		Logger.getLogger(WebUtils.class.getName()).log(Level.INFO, "IP:" + ipAddress);
-		return ipAddress;
-	}
-	
-	/**
-	 * 在session中获取区域id
-	 * 
-	 * @return
-	 */
-	public static BigDecimal getSessionAreaId() {
-		BigDecimal areaId = (BigDecimal) getSession().getAttribute(SESSION_AREAID_PARAM);
-		return areaId != null ? areaId : null;
-	}
-
-	/**
-	 * 在session中设置区域id
-	 * 
-	 */
-	public static void setSessionAreaId(BigDecimal areaId) {
-		getSession().setAttribute(SESSION_AREAID_PARAM, areaId);
-	}
-
-	/**
-	 * 在session中删除区域id
-	 * 
-	 */
-	public static void removeSessionAareId() {
-		getSession().removeAttribute(SESSION_AREAID_PARAM);
 	}
 }

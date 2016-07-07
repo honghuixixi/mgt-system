@@ -54,6 +54,12 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>cn.qpwa.mgt.service</groupId>
+			<artifactId>mgt-service-system</artifactId>
+			<version>${mgt-service-system.version}</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 		</dependency>
@@ -121,6 +127,11 @@
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-lgpl</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>jaxen</groupId>
+		    <artifactId>jaxen</artifactId>
 		</dependency>
 	</dependencies>
 </project>

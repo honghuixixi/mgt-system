@@ -25,5 +25,9 @@
 			<artifactId>qpwa-common</artifactId>
 			<version>${qpwa-common.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>
 	</dependencies>
 </project>
