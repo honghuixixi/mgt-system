@@ -1,7 +1,6 @@
 package cn.qpwa.mgt.core.system.dao.impl;
 
 import cn.qpwa.common.core.dao.HibernateEntityDao;
-import cn.qpwa.common.page.Page;
 import cn.qpwa.mgt.core.system.dao.MgtRoleResourceDao;
 import cn.qpwa.mgt.facade.system.entity.MgtRoleResource;
 import org.apache.commons.lang.StringUtils;
