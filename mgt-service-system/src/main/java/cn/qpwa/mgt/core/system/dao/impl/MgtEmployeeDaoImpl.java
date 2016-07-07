@@ -2,6 +2,7 @@ package cn.qpwa.mgt.core.system.dao.impl;
 
 import cn.qpwa.common.core.dao.HibernateEntityDao;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.common.utils.SqlUtil;
 import cn.qpwa.mgt.core.system.dao.MgtEmployeeDao;
 import cn.qpwa.mgt.facade.system.entity.MgtEmployee;
 import org.apache.commons.lang.StringUtils;
@@ -227,7 +228,7 @@ public class MgtEmployeeDaoImpl extends HibernateEntityDao<MgtEmployee> implemen
 			List<BigDecimal> merchantCodes) {
 		StringBuffer sql = new StringBuffer("select em.* from mgt_employee em where 1=1");
 		if(null !=  merchantCodes && merchantCodes.size() > 0){
-			sql.append(" and (" +SqlUtil.getSqlIn(merchantCodes, 1000, "em.MERCHANT_CODE")+")");
+			sql.append(" and (" + SqlUtil.getSqlIn(merchantCodes, 1000, "em.MERCHANT_CODE")+")");
 		}
 		return super.createSQLQuery(sql.toString()).addEntity(MgtEmployee.class).list();
 	}
