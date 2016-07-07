@@ -74,6 +74,7 @@
 		<commons-fileupload.version>1.2.2</commons-fileupload.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-net.version>3.1</commons-net.version>
+        <commons-fileupload.version>1.2.2</commons-fileupload.version>
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<postgresql.version>9.1-901.jdbc4</postgresql.version>
 		<org.aspectj.version>1.7.4</org.aspectj.version>
@@ -88,6 +89,14 @@
 		<json-lib-ext-spring.version>1.0.2</json-lib-ext-spring.version>
 		<p6spy.version>2.0.2</p6spy.version>
 		<com.fasterxml.jackson.version>2.1.4</com.fasterxml.jackson.version>
+		<httpcomponents.version>4.3.2</httpcomponents.version>
+		<javax.ws.rs.version>2.0.1</javax.ws.rs.version>
+		<glassfish.jersey.version>2.22.2</glassfish.jersey.version>
+		<unionpay.version>1.0.0private</unionpay.version>
+        <jsoup.version>1.7.2</jsoup.version>
+        <im4j.version>1.4.0</im4j.version>
+        <lowagie.version>2.1.7</lowagie.version>
+        <octo.captcha.version>1.0-RC6</octo.captcha.version>
 		<druid.version>1.0.7</druid.version>
 		<javax.validation.version>1.1.0.Final</javax.validation.version>
 	</properties>
@@ -140,6 +149,11 @@
 				<artifactId>commons-beanutils</artifactId>
 				<version>${commons-beanutils.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>c3p0</groupId>
 				<artifactId>c3p0</artifactId>
@@ -260,17 +274,17 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.3.2</version>
+                <version>${httpcomponents.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>4.3.2</version>
+                <version>${httpcomponents.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpmime</artifactId>
-                <version>4.3.2</version>
+                <version>${httpcomponents.version}</version>
             </dependency>
 			<dependency>
 				<groupId>commons-httpclient</groupId>
@@ -345,27 +359,107 @@
             <dependency>
                 <groupId>javax.ws.rs</groupId>
                 <artifactId>javax.ws.rs-api</artifactId>
-                <version>2.0.1</version>
+                <version>${javax.ws.rs.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.media</groupId>
                 <artifactId>jersey-media-json-jackson</artifactId>
-                <version>2.22.2</version>
+                <version>${glassfish.jersey.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.media</groupId>
                 <artifactId>jersey-media-multipart</artifactId>
-                <version>2.22.2</version>
+                <version>${glassfish.jersey.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.core</groupId>
                 <artifactId>jersey-client</artifactId>
-                <version>2.22.2</version>
+                <version>${glassfish.jersey.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.unionpay.acp</groupId>
                 <artifactId>upacp_sdk_private</artifactId>
-                <version>1.0.0private</version>
+                <version>${unionpay.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+
+            <!-- 图片处理 -->
+            <dependency>
+                <groupId>org.im4java</groupId>
+                <artifactId>im4java</artifactId>
+                <version>${im4j.version}</version>
+            </dependency>
+
+            <!-- 字体 -->
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>${lowagie.version}</version>
+                <optional>true</optional>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>bcprov-jdk14</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext-rtf</artifactId>
+                <version>${lowagie.version}</version>
+                <optional>true</optional>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>bcprov-jdk14</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- 验证码生成 -->
+            <dependency>
+                <groupId>com.octo.captcha</groupId>
+                <artifactId>jcaptcha-all</artifactId>
+                <version>${octo.captcha.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>quartz</groupId>
+                        <artifactId>quartz</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-dbcp</groupId>
+                        <artifactId>commons-dbcp</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-pool</groupId>
+                        <artifactId>commons-pool</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>hsqldb</groupId>
+                        <artifactId>hsqldb</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>net.sf.ehcache</groupId>
+                        <artifactId>ehcache</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>concurrent</groupId>
+                        <artifactId>concurrent</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>xerces</groupId>
+                        <artifactId>xmlParserAPIs</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
         </dependencies>
 	</dependencyManagement>

@@ -15,8 +15,12 @@
     分页
 ### /utils
 ```
+/captcha
+    验证码生成引擎
 /date
     日期工具
+/file
+    文件工具
 /hibernate
     session工具
 /http
@@ -31,6 +35,10 @@
     二维码工具
 /setting
     系统设置
+/sms
+    短信发送工具
 其他
     EnumConverter 枚举类型转换
+    MoneyFormatUtils 数字金额转中文
+    UploadUtils 文件上传
 ```

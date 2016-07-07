@@ -1,4 +1,4 @@
-package cn.qpwa.common.filter;
+package cn.qpwa.common.web.filter;
 
 import org.hibernate.FlushMode;
 import org.hibernate.Session;
