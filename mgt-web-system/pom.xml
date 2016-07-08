@@ -133,6 +133,12 @@
 		    <groupId>jaxen</groupId>
 		    <artifactId>jaxen</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 

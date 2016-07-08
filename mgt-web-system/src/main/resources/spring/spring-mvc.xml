@@ -19,7 +19,7 @@
 	
 	<mvc:annotation-driven/> 
 	
-	<!-- <mvc:interceptors>
+	<mvc:interceptors>
 			<mvc:interceptor>
 			<mvc:mapping path="/manager/**" />
 			<mvc:mapping path="/department/**" />
@@ -71,14 +71,14 @@
 			<mvc:mapping path="/procedure/**" />
 			<mvc:mapping path="/inOutBalanceOfAcc/**" />
 			<mvc:mapping path="/test/**" />
-			<bean class="cn.qpwa.mgt.web.system.utils.interceptor.SessionInterceptor"
+			<bean class="cn.qpwa.mgt.web.system.interceptor.SessionInterceptor"
 				init-method="init"></bean>
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/**/**" />
 			<bean class="cn.qpwa.mgt.web.system.handler.MultiViewHandlerInterceptor"></bean>
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors>
 	
 	<bean id="authorityMapping" class="cn.qpwa.common.web.handler.AuthorityMappingRead">
 		<constructor-arg index="0">
