@@ -8,6 +8,7 @@ import cn.qpwa.common.utils.json.JSONTools;
 import cn.qpwa.common.web.base.BaseController;
 import cn.qpwa.mgt.facade.system.entity.MgtMenu;
 import cn.qpwa.mgt.facade.system.service.MgtMenuService;
+import cn.qpwa.mgt.facade.system.service.MgtModuleService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -34,6 +35,9 @@ public class MenuController extends BaseController {
 
 	@Autowired
 	private MgtMenuService mgtMenuService;
+
+	@Autowired
+	private MgtModuleService mgtModuleService;
 
 	/**
 	 * 获取菜单信息页面
@@ -118,7 +122,9 @@ public class MenuController extends BaseController {
 	@RequestMapping(value = "addMenuUI")
 	public String addMenuUI(ModelMap modelMap) {
 		List<Map<String, Object>> menuList = mgtMenuService.findByParentId("-1", null);
+		List mgtModuleList = mgtModuleService.selectMgtModuleList();
 		modelMap.addAttribute("menuList", menuList);
+		modelMap.addAttribute("mgtModuleList",mgtModuleList);
 		return getUrl("mgt.addMenuUI");
 	}
 
@@ -160,9 +166,11 @@ public class MenuController extends BaseController {
 		if (null != l && l.size() > 0) {
 			pIdFlag = true;
 		}
+		List mgtModuleList = mgtModuleService.selectMgtModuleList();
 		modelMap.addAttribute("pIdFlag", pIdFlag);
 		modelMap.addAttribute("menu", menu);
 		modelMap.addAttribute("menuList", menuList);
+		modelMap.addAttribute("mgtModuleList",mgtModuleList);
 		return getUrl("mgt.editMenuUI");
 	}
 

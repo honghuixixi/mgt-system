@@ -32,7 +32,8 @@ public class MgtMenu implements Serializable {
 	private String content;
 	/*描述*/
 	private String description;
-	
+	/*菜单关联模块信息*/
+	private Integer moduleId;
 
 	@Column(name = "DESCRIPTION")
 	public String getDescription() {
@@ -194,5 +195,14 @@ public class MgtMenu implements Serializable {
 
 	public void setVersion(Integer version) {
 		this.version = version;
+	}
+
+	@Column(name = "MODULE_ID")
+	public Integer getModuleId() {
+		return moduleId;
+	}
+
+	public void setModuleId(Integer moduleId) {
+		this.moduleId = moduleId;
 	}
 }

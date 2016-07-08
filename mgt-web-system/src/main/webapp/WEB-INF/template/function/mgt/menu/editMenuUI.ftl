@@ -60,15 +60,15 @@
 							<div class="col-sm-7" >
 							    <select class="form-control required" id="pId" name="pId" >
 									<option value="-1" selected="selected">&nbsp;</option>
-[#if menuList?exists] 
-  [#if pIdFlag==false && menu.PId !='-1' ]
-    [#list menuList as menus]
-      [#if menu.id!=menus.id] 
-        <option value="${menus.ID}" [#if menu.PId==menus.ID] selected="selected" [/#if]>${menus.NAME}</option>
-      [/#if]
-    [/#list]
-  [/#if]
-[/#if]
+									[#if menuList?exists]
+									  [#if pIdFlag==false && menu.PId !='-1' ]
+										[#list menuList as menus]
+										  [#if menu.id!=menus.id]
+											<option value="${menus.ID}" [#if menu.PId==menus.ID] selected="selected" [/#if]>${menus.NAME}</option>
+										  [/#if]
+										[/#list]
+									  [/#if]
+									[/#if]
 								</select>
 							</div>
 						</div>
@@ -100,6 +100,24 @@
 							<span class="help-inline col-sm-1">*</span>
 						</div>
 					</div>
+
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <label for="pId" class="col-sm-4 control-label">
+                                所属模块 ：
+                            </label>
+                            <div class="col-sm-7">
+                                <select class="form-control required" id="moduleId" name="moduleId">
+									[#if mgtModuleList?exists]
+										[#list mgtModuleList as module]
+											 <option value="${module.PK_NO}" [#if menu.moduleId==module.pkNo] selected="selected" [/#if]>${module.NAME}</option>
+										[/#list]
+									[/#if]
+                                </select>
+                            </div>
+                            <span class="help-inline col-sm-1">*</span>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</form>
