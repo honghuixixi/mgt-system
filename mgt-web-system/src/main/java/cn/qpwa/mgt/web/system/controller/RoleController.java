@@ -1,5 +1,7 @@
 package cn.qpwa.mgt.web.system.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +25,7 @@ import cn.qpwa.common.utils.SystemContext;
 import cn.qpwa.common.utils.json.JSONTools;
 import cn.qpwa.common.web.base.BaseController;
 import cn.qpwa.common.web.utils.WebUtils;
+import cn.qpwa.mgt.facade.system.entity.MgtResource;
 import cn.qpwa.mgt.facade.system.entity.MgtRole;
 import cn.qpwa.mgt.facade.system.service.MgtMenuService;
 import cn.qpwa.mgt.facade.system.service.MgtResourceService;
@@ -339,8 +342,33 @@ public class RoleController extends BaseController {
 		if (WebUtils.getAttribute(BizConstant.SESSION_USER_SUPER) != null
 				&& "1".equals(WebUtils.getAttribute(BizConstant.SESSION_USER_SUPER))) {
 			visible = null;
-			// 获取所以一级菜单
-			menuList = mgtMenuService.findByParentId("-1", visible);
+			// 获取所以一级菜单 该方法与数据库连接数过多
+			//menuList = mgtMenuService.findByParentId("-1", visible);
+			
+			//查询所有菜单，资源
+			Map<String,Object> paramMap = new HashMap<String,Object>();
+			paramMap.put("visible", "1");
+			List<Map<String, Object>> allMenus = mgtMenuService.findByList(paramMap);
+			List<Map<String, Object>> allResources = mgtResourceService.findAll();
+			menuList = mgtMenuService.findByParentIdNotResource("-1", visible);
+			for (Map<String, Object> menu : menuList) {
+				List<Map<String, Object>> menuItems = new ArrayList<Map<String, Object>>();
+				for (Map<String, Object> allMenu : allMenus) {
+					if(menu.get("ID").toString().equals(allMenu.get("PID").toString())){
+						List<Map<String, Object>> resourceItems = new ArrayList<Map<String, Object>>();
+						for (Map<String, Object> resource : allResources) {
+							if(allMenu.get("ID").toString().equals(resource.get("MENU_ID").toString())){
+								resourceItems.add(resource);
+							}
+						}
+						allMenu.put("resourceItems", resourceItems);
+						menuItems.add(allMenu);
+					}
+					
+				}
+				menu.put("menuItems", menuItems);
+			}
+			
 		} else {
 			menuList = (List<Map<String, Object>>) WebUtils
 					.getAttribute(BizConstant.SESSION_USER_AUTHORITY_MENU);

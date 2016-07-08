@@ -125,4 +125,10 @@ public class MgtResourceServiceImpl implements MgtResourceService {
     public List queryResourceListByRoleIds(Map<String, Object> paramMap){
     	return mgtResourceDao.queryResourceListByRoleIds(paramMap);
     }
+
+	@Override
+	public List findAll() {
+		return mgtResourceDao.findAll();
+	}
+    
 }

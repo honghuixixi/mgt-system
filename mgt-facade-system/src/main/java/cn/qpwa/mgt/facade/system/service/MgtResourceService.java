@@ -113,4 +113,10 @@ public interface MgtResourceService extends BaseService<MgtResource> {
      * @return
      */
     public List queryResourceListByRoleIds(Map<String, Object> paramMap);
+    
+    /**
+     * 查询所有
+     * @return
+     */
+    public List findAll();
 }

@@ -133,6 +133,11 @@ public class MgtMenuServiceImpl implements MgtMenuService {
 	public List<MgtMenu> fingMgtMenuByPid(String pid) {
 		return mgtMenuDao.fingMgtMenuByPid(pid);
 	}
+
+	@Override
+	public List<Map<String, Object>> findByParentIdNotResource(String parentId, String visible) {
+		return mgtMenuDao.findByParentId(parentId, visible);
+	}
 	
 	
 }

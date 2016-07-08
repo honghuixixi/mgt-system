@@ -85,4 +85,10 @@ public interface MgtResourceDao extends EntityDao<MgtResource> {
      * @return
      */
     public List queryResourceListByRoleIds(Map<String, Object> paramMap);
+    
+    /**
+     * 查询所有
+     * @return
+     */
+    public List findAll();
 }

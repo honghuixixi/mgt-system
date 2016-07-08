@@ -79,6 +79,16 @@ public interface MgtMenuService extends BaseService<MgtMenu> {
      *            是否可见
      */
     public List<Map<String, Object>> findByParentId(String parentId, String visible);
+    
+    /**
+     * 查询菜单通过parentId
+     * 
+     * @param parentId 父类菜单ID
+     * 
+     * @param visible
+     *            是否可见
+     */
+    public List<Map<String, Object>> findByParentIdNotResource(String parentId, String visible);
 
     /**
      * 查询所有菜单

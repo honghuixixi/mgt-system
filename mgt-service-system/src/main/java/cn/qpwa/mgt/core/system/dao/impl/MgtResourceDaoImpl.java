@@ -133,4 +133,12 @@ public class MgtResourceDaoImpl extends HibernateEntityDao<MgtResource> implemen
 		query.setParameter("status", paramMap.get("status"));
 		return query.list();
     }
+    
+    @Override
+	public List findAll() {
+    	String sql = "select * from MGT_RESOURCE t where t.status=:status";
+		Query query = super.getSession().createSQLQuery(sql).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
+		query.setParameter("status", "1");
+		return query.list();
+	}
 }
