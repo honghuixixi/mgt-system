@@ -57,11 +57,11 @@
 							<div class="col-sm-7">
 							    <select class="form-control required" id="pId" name="pId">
 									<option value="-1">&nbsp;</option>
-[#if menuList?exists] 
-  [#list menuList as menu]
-    <option value="${menu.ID}">${menu.NAME}</option>
-  [/#list]
-[/#if]
+									[#if menuList?exists]
+									  [#list menuList as menu]
+										<option value="${menu.ID}">${menu.NAME}</option>
+									  [/#list]
+									[/#if]
 								</select>
 							</div>
 						</div>
@@ -91,6 +91,25 @@
 							<span class="help-inline col-sm-1">*</span>
 						</div>
 					</div>
+
+                    <div class="col-xs-5">
+                        <div class="form-group">
+                            <label for="pId" class="col-sm-4 control-label">
+                                所属模块 ：
+                            </label>
+                            <div class="col-sm-7">
+                                <select class="form-control required" id="moduleId" name="moduleId">
+									[#if mgtModuleList?exists]
+										[#list mgtModuleList as module]
+											<option value="${module.PK_NO}">${module.NAME}</option>
+										[/#list]
+									[/#if]
+                                </select>
+                            </div>
+                            <span class="help-inline col-sm-1">*</span>
+                        </div>
+                    </div>
+
 				</div>
 			</div>
 		</div>
