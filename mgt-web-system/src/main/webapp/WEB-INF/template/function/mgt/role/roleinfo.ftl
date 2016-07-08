@@ -105,7 +105,7 @@ function editRoleUI(obj){
 }
 function editRoleResourceUI(obj){
 		mgt_util.showjBox({
-							width : 960,
+							width : 360,
 							height : 500,
 							title : '编辑',
 							url : '${base}/role/addRoleResourceUI.jhtml?id='+obj,

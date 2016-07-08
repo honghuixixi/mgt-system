@@ -18,10 +18,10 @@
 	</script>
 
 	<body class="toolbar-fixed-top">
-		<form class="form-horizontal" id="form" action="${base}/role/addRoleResource.jhtml">
+		<div class="form-horizontal">
 			<input type="hidden" value="${roleId}" name="roleId">
 			<div class="navbar-fixed-top" id="toolbar">
-				<button class="btn btn-danger" data-toggle="jBox-submit" data-form="#form">保存
+				<button class="btn btn-danger" id="submit">保存
 					<i class="fa-save  align-top bigger-125 fa-on-right"></i>
 				</button>
 				<input class="btn btn-success"  type="button" value="全选" id="allSelect"/>
@@ -31,74 +31,92 @@
 			</div>
 
 			<div class="page-content">
-[#if menuList?exists]
-    [#list menuList as menuLists]
-    	[#list menuLists.menuItems as menuItem]
-				<div class="row">
-					<div class="col-xs-5">
-						<div class="form-group">
-						<span class="contraction_span" id="span${menuItem.ID}" onClick="spShow('${menuItem.ID}')" style="cursor: pointer;">-</span><input type="checkbox" id="ckbox${menuItem.ID}" onClick="chTable('${menuItem.ID}')" class="contraction_input" /><label class="fpzy_la" style="color: red;">${menuItem.NAME}</label>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-						<table class="contraction_table"  id="table${menuItem.ID}">
-							<tr >
-			[#list menuItem.resourceItems as resourceItem]
-								<td width="100">
-									<input type="checkbox" name="resourceIds" value="${resourceItem.ID}">${resourceItem.NAME}&nbsp;&nbsp;
-								</td>
-				[#if (resourceItem_index+1)%4==0 && menuItem.resourceItems.size()>4] 
-							</tr>
-							<tr height="50">
-				[/#if]
-			[/#list]
-							</tr>
-						</table>
-						<HR align=left width=550 color=#990099 SIZE=30 noShade>
-				</div>
-		[/#list]
-    [/#list]
-[/#if]
+                <div>
+                    <ul id="menuTree" class="ztree"></ul>
+                </div>
 			</div>
-		</form>
+		</div>
 	</body>
 <script>
-[#if resourceList?exists]
-	[#list resourceList as resource]
-		$("input[name='resourceIds'][value='${resource.ID}']").attr("checked",true);
-	[/#list] 
-[/#if]
-
 $(document).ready(function(){
+
+    function setFontCss(treeId, treeNode) {
+        return treeNode.level == 0 ? {'font-weight': 'bolder'} : treeNode.level == 1 ? {'font-weight': 'bold'}:{};
+    }
+
+    var setting = {
+        check : {
+            autoCheckTrigger : false,
+            chkboxType : {"Y": "ps", "N": "ps"},
+            chkStyle : "checkbox",
+            enable : true,
+            nocheckInherit : false,
+            chkDisabledInherit : false,
+            radioType : "level"
+        },
+        view: {
+            fontCss: setFontCss
+        }
+    };
+	var zNodes = [
+		[#if menuList?exists]
+			[#list menuList as menuLists]
+            {name:'${menuLists.NAME}',menuID:'${menuLists.ID}',children:[
+				[#list menuLists.menuItems as menuItem]
+				{name:"${menuItem.NAME}",menuItemID:'${menuItem.ID}',children:[
+					[#list menuItem.resourceItems as resourceItem]
+						{name:'${resourceItem.NAME}',resourceId:'${resourceItem.ID}'},
+					[/#list]
+                ]},
+				[/#list]
+            ]},
+			[/#list]
+		[/#if]
+	];
+    var zTreeObj = $.fn.zTree.init($("#menuTree"), setting, zNodes);
+    var node;
+    [#if resourceList?exists]
+        [#list resourceList as resource]
+            node = zTreeObj.getNodeByParam("resourceId", '${resource.ID}', null);
+            zTreeObj.checkNode(node, true, true);
+        [/#list]
+    [/#if]
+
+    $('#submit').click(function () {
+        var resourceIds = '';
+        zTreeObj.getNodesByFilter(function (node) {
+            if(node.level == 2&&node.checked) {
+                resourceIds += node.resourceId+',';
+            }
+            return false;
+        });
+        resourceIds = resourceIds.substring(0,resourceIds.length-1);
+        var roleId = $('input[name=roleId').val();
+        $.ajax({
+            url: '${base}/role/addRoleResource.jhtml',
+            type: 'post',
+            dataType: 'json',
+            data: {roleId:roleId,resourceIds:resourceIds},
+            success: function (data) {
+                if(data.success) {
+                    top.$.jBox.tip(data.msg, 'success');
+                    top.$.jBox.close();
+                } else {
+                    top.$.jBox.tip(data.msg, 'error');
+                }
+            }
+        });
+    });
+
 	$("#allSelect").click(function(){
 		if(this.value=='全选'){
-			$("input[name='resourceIds']").attr("checked",true);
+            zTreeObj.checkAllNodes(true);
 			this.value='取消全选';
 		}else{
-			$("input[name='resourceIds']").attr("checked",false);
+            zTreeObj.checkAllNodes(false);
 			this.value='全选';
 		}
 	});
 });
-
-function chTable(obj){
-var checkFlag=$("#ckbox"+obj).attr("checked");
-if(null==checkFlag||undefined==checkFlag){
-checkFlag=false;
-}
-		$("#table"+obj).find("input[name='resourceIds']").attr("checked",checkFlag);
-}
-
-function spShow(obj){
-var spanText=$("#span"+obj).text();
-if(spanText=='+'){
-$("#span"+obj).text("-")
-}else{
-$("#span"+obj).text("+")
-}
-$("#table"+obj).fadeToggle();
-
-}
 </script>
 </html>

@@ -324,13 +324,6 @@
 				<version>${jexcelapi.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>net.sf.json-lib</groupId>
-				<artifactId>json-lib</artifactId>
-				<version>2.4</version>
-				<classifier>jdk15</classifier>
-			</dependency>
-
 			<!-- 绘制二维码 -->
 			<dependency>
 				<groupId>com.google.zxing</groupId>
@@ -346,11 +339,6 @@
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid</artifactId>
 				<version>${druid.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>${commons-fileupload.version}</version>
 			</dependency>
 			<dependency>  
 			    <groupId>javax.validation</groupId>  
