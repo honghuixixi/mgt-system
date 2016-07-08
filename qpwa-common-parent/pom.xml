@@ -81,6 +81,7 @@
 		<org.eclipse.jetty.version>9.0.0.RC0</org.eclipse.jetty.version>
 		<org.bouncycastle.version>1.47</org.bouncycastle.version>
 		<org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
+        <codehaus.plexus.utils.version>3.0.22</codehaus.plexus.utils.version>
 		<com.google.code.gson.version>2.2.4</com.google.code.gson.version>
 		<com.oracle.ojdbc14.version>11.2private</com.oracle.ojdbc14.version>
 		<ehcache-core.version>2.5.7</ehcache-core.version>
@@ -225,6 +226,11 @@
 				<artifactId>jackson-mapper-lgpl</artifactId>
 				<version>${org.codehaus.jackson.version}</version>
 			</dependency>
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-utils</artifactId>
+                <version>${codehaus.plexus.utils.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>com.oracle</groupId>
 				<artifactId>ojdbc14</artifactId>
