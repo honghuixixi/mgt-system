@@ -42,13 +42,8 @@ public class LandmarkMasController extends BaseController {
 	@Autowired
 	private LandmarkMasService landmarkMasService;
 	@Autowired
-	private ScuserAreaService scuserAreaService;
-	@Autowired
-	private MgtEmployeeService mgtEmployeeService;
-	@Autowired
 	private UserService userService;
-	@Autowired
-	private AreaMasWebService areaMasWebService;
+
 
 	/**
 	 * 跳转地标管理页面

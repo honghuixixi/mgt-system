@@ -37,7 +37,7 @@ import java.util.Map;
 @Controller
 @Scope("prototype")
 @RequestMapping(value = "/operationsCenter")
-@SuppressWarnings("all")
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class OperationsCenterController extends BaseController{
 	@Autowired
 	private UserService userService;
