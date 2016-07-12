@@ -27,18 +27,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>cn.qpwa.common</groupId>
-			<artifactId>qpwa-common</artifactId>
-			<version>${qpwa-common.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.qpwa.common</groupId>
 			<artifactId>qpwa-common-config</artifactId>
 			<version>${qpwa-common-config.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cn.qpwa.common</groupId>
-			<artifactId>qpwa-common-core</artifactId>
-			<version>${qpwa-common-core.version}</version>
 		</dependency>
 
 		<dependency>
@@ -52,13 +42,22 @@
 			<artifactId>mgt-facade-system</artifactId>
 			<version>${mgt-facade-system.version}</version>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>cn.qpwa.mgt.service</groupId>
-			<artifactId>mgt-service-system</artifactId>
-			<version>${mgt-service-system.version}</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -83,7 +82,7 @@
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache-core</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>

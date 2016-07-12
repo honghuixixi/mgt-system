@@ -1,8 +1,8 @@
-package cn.qpwa.common.log.service;
+package cn.qpwa.mgt.facade.system.service;
 
-import cn.qpwa.common.entity.SysBizActionLog;
-import cn.qpwa.common.entity.User;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.mgt.facade.system.entity.SysBizActionLog;
+import cn.qpwa.mgt.facade.system.vo.User;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;

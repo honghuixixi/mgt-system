@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 要暴露的服务接口 -->
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.AreaMasWebService" ref="areaMasWebService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.ArticleCategoryService" ref="articleCategoryService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.ArticleService" ref="articleService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.ErrorLogService" ref="errorLogService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.IndexDataService" ref="IndexDataService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.LandmarkMasService" ref="landmarkMasService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MainPageBoxService" ref="mainPageBoxService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MainPageService" ref="mainPageService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtDepartmentService" ref="mgtDepartmentService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtDepartmentUserService" ref="mgtDepartmentUserService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtEmployeeService" ref="mgtEmployeeService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtMenuService" ref="mgtMenuService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtModuleService" ref="mgtModuleService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtResourceService" ref="mgtResourceService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtRoleService" ref="mgtRoleService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtSettingDtlService" ref="mgtSettingDtlService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MgtSettingService" ref="mgtSettingService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.OperatorCenterService" ref="operatorCenterServiceImpl" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.RSAService" ref="rsaServiceImpl" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.ScuserAreaService" ref="ScuserAreaService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.SubaccountService" ref="subaccountService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.UserService" ref="userServiceImpl" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.VendorServiceProviderService" ref="vendorServiceProviderService" />
+
+
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.LogService" ref="logService" />
+    <dubbo:service interface="cn.qpwa.mgt.facade.system.service.MessageContentService" ref="messageContentService" />
+</beans>

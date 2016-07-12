@@ -1,8 +1,8 @@
-package cn.qpwa.common.message.dao;
+package cn.qpwa.mgt.core.system.dao;
 
-import cn.qpwa.common.entity.MessageContent;
 import cn.qpwa.common.core.dao.EntityDao;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.mgt.facade.system.entity.MessageContent;
 
 import java.math.BigDecimal;
 import java.util.Collection;

@@ -1,12 +1,13 @@
-package cn.qpwa.common.entity;
+package cn.qpwa.mgt.facade.system.vo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 
 /**
  * 用户信息前台展示对象，用于web前台数据交互
  */
-public class User {
+public class User implements Serializable{
 
 	/** 用户ID */
 	private BigDecimal userNo;

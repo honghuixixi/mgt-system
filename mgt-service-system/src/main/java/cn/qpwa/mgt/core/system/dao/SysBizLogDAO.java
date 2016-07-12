@@ -1,8 +1,8 @@
-package cn.qpwa.common.log.dao;
+package cn.qpwa.mgt.core.system.dao;
 
 import cn.qpwa.common.core.dao.EntityDao;
-import cn.qpwa.common.entity.SysBizActionLog;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.mgt.facade.system.entity.SysBizActionLog;
 
 import java.util.LinkedHashMap;
 import java.util.List;

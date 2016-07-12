@@ -1,11 +1,12 @@
 /**
  * 
  */
-package cn.qpwa.common.message.dao;
+package cn.qpwa.mgt.core.system.dao.impl;
 
-import cn.qpwa.common.entity.MsgTemplet;
-import cn.qpwa.common.page.Page;
 import cn.qpwa.common.core.dao.HibernateEntityDao;
+import cn.qpwa.common.page.Page;
+import cn.qpwa.mgt.core.system.dao.MsgTempletDAO;
+import cn.qpwa.mgt.facade.system.entity.MsgTemplet;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;

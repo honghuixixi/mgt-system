@@ -1,8 +1,9 @@
-package cn.qpwa.common.message.dao;
+package cn.qpwa.mgt.core.system.dao.impl;
 
-import cn.qpwa.common.entity.MessageContent;
 import cn.qpwa.common.core.dao.HibernateEntityDao;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.mgt.core.system.dao.MessageContentDAO;
+import cn.qpwa.mgt.facade.system.entity.MessageContent;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;

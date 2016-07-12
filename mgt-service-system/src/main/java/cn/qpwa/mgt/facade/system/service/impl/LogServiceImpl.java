@@ -1,16 +1,17 @@
-package cn.qpwa.common.log.service;
+package cn.qpwa.mgt.facade.system.service.impl;
 
 import cn.qpwa.common.constant.LogConstant;
-import cn.qpwa.common.entity.SysBizActionLog;
-import cn.qpwa.common.entity.SysLoginLog;
-import cn.qpwa.common.entity.User;
-import cn.qpwa.common.log.dao.SysBizLogDAO;
-import cn.qpwa.common.log.dao.SysLoginLogDAO;
 import cn.qpwa.common.page.Page;
 import cn.qpwa.common.utils.IPUtil;
 import cn.qpwa.common.utils.http.HttpUtil;
 import cn.qpwa.common.utils.json.JSONTools;
 import cn.qpwa.common.utils.json.JsonUtils;
+import cn.qpwa.mgt.core.system.dao.SysBizLogDAO;
+import cn.qpwa.mgt.core.system.dao.SysLoginLogDAO;
+import cn.qpwa.mgt.facade.system.entity.SysBizActionLog;
+import cn.qpwa.mgt.facade.system.entity.SysLoginLog;
+import cn.qpwa.mgt.facade.system.service.LogService;
+import cn.qpwa.mgt.facade.system.vo.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.BeanUtils;

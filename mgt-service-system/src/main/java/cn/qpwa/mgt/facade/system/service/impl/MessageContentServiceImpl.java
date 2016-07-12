@@ -1,16 +1,17 @@
-package cn.qpwa.common.message.service;
+package cn.qpwa.mgt.facade.system.service.impl;
 
-import cn.qpwa.common.message.dao.MessageContentDAO;
-import cn.qpwa.common.message.dao.MgtEmployeeDao;
-import cn.qpwa.common.message.dao.MsgTempletDAO;
-import cn.qpwa.common.entity.Employee;
-import cn.qpwa.common.entity.MessageContent;
-import cn.qpwa.common.entity.MsgTemplet;
 import cn.qpwa.common.easemob.comm.constant.PusherType;
-import cn.qpwa.common.utils.message.MessageUtil;
-import cn.qpwa.common.utils.SystemContext;
 import cn.qpwa.common.page.Page;
 import cn.qpwa.common.page.PageView;
+import cn.qpwa.common.utils.SystemContext;
+import cn.qpwa.common.utils.message.MessageUtil;
+import cn.qpwa.mgt.core.system.dao.MessageContentDAO;
+import cn.qpwa.mgt.core.system.dao.MgtEmployeeDao;
+import cn.qpwa.mgt.core.system.dao.MsgTempletDAO;
+import cn.qpwa.mgt.facade.system.entity.MessageContent;
+import cn.qpwa.mgt.facade.system.entity.MgtEmployee;
+import cn.qpwa.mgt.facade.system.entity.MsgTemplet;
+import cn.qpwa.mgt.facade.system.service.MessageContentService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -131,7 +132,7 @@ public class MessageContentServiceImpl implements MessageContentService {
 				        if(paramMap.containsKey("toStaff") && "Y".equals(paramMap.get("toStaff"))){
 				        	List<BigDecimal> merchantCodes = new ArrayList<BigDecimal>();
 				        	merchantCodes.add( new BigDecimal(msgMap.get("ownerId").toString()) );
-				        	List<Employee> list = employeeDao.findEmployeeByMerchantCode(merchantCodes);
+				        	List<MgtEmployee> list = employeeDao.findEmployeeByMerchantCode(merchantCodes);
 				        	if(null != list && list.size() > 0){
 				        		String[] receivers = new String[list.size()];
 					        	for(int i=0;i<list.size();i++){

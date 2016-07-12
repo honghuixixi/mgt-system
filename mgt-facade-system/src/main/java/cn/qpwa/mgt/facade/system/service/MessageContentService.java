@@ -1,8 +1,8 @@
-package cn.qpwa.common.message.service;
+package cn.qpwa.mgt.facade.system.service;
 
-import cn.qpwa.common.entity.MessageContent;
 import cn.qpwa.common.page.Page;
 import cn.qpwa.common.page.PageView;
+import cn.qpwa.mgt.facade.system.entity.MessageContent;
 
 import java.math.BigDecimal;
 import java.util.Collection;

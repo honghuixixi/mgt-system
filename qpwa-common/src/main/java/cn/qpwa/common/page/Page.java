@@ -1,5 +1,6 @@
 package cn.qpwa.common.page;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  * 
  */
 @SuppressWarnings({ "rawtypes", "unchecked" })
-public class Page<T> {
+public class Page<T> implements Serializable {
 
 	public final static int DEFAULT_PAGE_SIZE = 20;
 

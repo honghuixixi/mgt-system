@@ -3,3 +3,4 @@
 */.checkstyle
 */.project
 */target/
+**/logs/

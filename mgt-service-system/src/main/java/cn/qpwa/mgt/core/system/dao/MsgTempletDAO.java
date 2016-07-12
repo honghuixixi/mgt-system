@@ -1,11 +1,11 @@
 /**
  * 
  */
-package cn.qpwa.common.message.dao;
+package cn.qpwa.mgt.core.system.dao;
 
-import cn.qpwa.common.entity.MsgTemplet;
 import cn.qpwa.common.core.dao.EntityDao;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.mgt.facade.system.entity.MsgTemplet;
 
 import java.util.Collection;
 import java.util.Map;

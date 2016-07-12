@@ -94,7 +94,7 @@
 	<bean id="imageCaptchaService"
 		class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService">
 		<property name="captchaEngine">
-			<bean class="cn.qpwa.common.CaptchaEngine" />
+			<bean class="cn.qpwa.common.utils.captcha.CaptchaEngine" />
 		</property>
 		<property name="minGuarantedStorageDelayInSeconds" value="3600" />
 	</bean>

@@ -1,9 +1,10 @@
 package cn.qpwa.common.page;
 
+import java.io.Serializable;
 import java.util.List;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
-public class PageView<T> {
+public class PageView<T> implements Serializable {
 	/** 分页数据 **/
 	private List<T> records;
 	/** 页码开始索引和结束索引 **/

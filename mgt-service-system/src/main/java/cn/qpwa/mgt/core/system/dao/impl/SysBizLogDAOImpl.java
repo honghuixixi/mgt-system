@@ -1,8 +1,9 @@
-package cn.qpwa.common.log.dao;
+package cn.qpwa.mgt.core.system.dao.impl;
 
-import cn.qpwa.common.entity.SysBizActionLog;
 import cn.qpwa.common.core.dao.HibernateEntityDao;
 import cn.qpwa.common.page.Page;
+import cn.qpwa.mgt.core.system.dao.SysBizLogDAO;
+import cn.qpwa.mgt.facade.system.entity.SysBizActionLog;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Repository;
 

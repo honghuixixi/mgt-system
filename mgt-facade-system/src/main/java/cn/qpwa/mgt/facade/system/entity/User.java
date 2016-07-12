@@ -1,13 +1,14 @@
 package cn.qpwa.mgt.facade.system.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
 @Table(name = "SCUSER")
 @SequenceGenerator(name = "sequenceGenerator", sequenceName = "SEQ_SYS_PK_NO")
-public class User {
+public class User implements Serializable {
 	
 	private BigDecimal orgNo;
 	

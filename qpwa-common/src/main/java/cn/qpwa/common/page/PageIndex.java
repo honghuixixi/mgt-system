@@ -1,6 +1,8 @@
 package cn.qpwa.common.page;
 
-public class PageIndex {
+import java.io.Serializable;
+
+public class PageIndex implements Serializable {
 	private long startindex;
 	private long endindex;
 

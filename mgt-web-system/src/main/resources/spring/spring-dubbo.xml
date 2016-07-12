@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ 	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
+	default-lazy-init="false" >
+
+    <dubbo:application name="dubbo_web_system" owner="wlw" ></dubbo:application>
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry address="zookeeper://192.168.20.125:2181"></dubbo:registry>
+
+	<dubbo:consumer check="false"/>
+    <!-- 要引用的服务 -->
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.AreaMasWebService" id="areaMasWebService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.ArticleCategoryService" id="articleCategoryService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.ArticleService" id="articleService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.ErrorLogService" id="errorLogService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.IndexDataService" id="indexDataService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.LandmarkMasService" id="landmarkMasService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MainPageBoxService" id="mainPageBoxService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MainPageService" id="mainPageService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtDepartmentService" id="mgtDepartmentService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtDepartmentUserService" id="mgtDepartmentUserService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtEmployeeService" id="mgtEmployeeService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtMenuService" id="mgtMenuService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtModuleService" id="mgtModuleService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtResourceService" id="mgtResourceService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtRoleService" id="mgtRoleService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtSettingDtlService" id="mgtSettingDtlService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MgtSettingService" id="mgtSettingService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.OperatorCenterService" id="operatorCenterService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.RSAService" id="rsaServiceImpl"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.ScuserAreaService" id="scuserAreaService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.SubaccountService" id="subaccountService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.UserService" id="userService"  init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.VendorServiceProviderService" id="vendorServiceProviderService" init="true"/>
+
+	<!-- 日志和消息 -->
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.LogService" id="logService" init="true"/>
+	<dubbo:reference interface="cn.qpwa.mgt.facade.system.service.MessageContentService" id="messageContentService" init="true"/>
+	<!-- 监控中心配置 -->
+	<!-- 监控中心协议，如果为protocol="registry"，表示从注册中心发现监控中心地址，否则直连监控中心 -->
+	<!-- 直连监控中心服务器地址，如：address="192.168.3.71:7070" -->
+	<dubbo:monitor protocol="registry"/>	
+</beans>

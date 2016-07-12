@@ -20,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.qpwa.common.constant.BizConstant;
 import cn.qpwa.common.constant.LogConstant;
-import cn.qpwa.common.log.service.LogService;
 import cn.qpwa.common.utils.MapUtil;
 import cn.qpwa.common.utils.Msg;
 import cn.qpwa.common.web.base.BaseController;
@@ -30,6 +29,7 @@ import cn.qpwa.mgt.facade.system.entity.MgtEmployee;
 import cn.qpwa.mgt.facade.system.entity.User;
 import cn.qpwa.mgt.facade.system.service.MgtEmployeeService;
 import cn.qpwa.mgt.facade.system.service.UserService;
+import cn.qpwa.mgt.facade.system.service.LogService;
 
 /**
  * 登录、注销Controller
